@@ -31,8 +31,7 @@ public abstract class SuperRcvHolder<T> extends RecyclerView.ViewHolder {
      * @param datas            整个listview对应的数据
      * @param superRecyAdapter adapter对象引用,可用于触发notifydatesetChanged()方法刷新整个listview,比如更改的单选按钮
      */
-    public void assignDatasAndEvents(Activity context, T data, int position,
-                                     boolean isLast, boolean isListViewFling, List datas, SuperRcvAdapter superRecyAdapter) {
+    public void assignDatasAndEvents(Activity context, T data, int position, boolean isLast, boolean isListViewFling, List datas, SuperRcvAdapter superRecyAdapter) {
         assignDatasAndEvents(context, data);
     }
 

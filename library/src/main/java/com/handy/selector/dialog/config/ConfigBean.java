@@ -44,78 +44,49 @@ public class ConfigBean extends MyDialogBuilder implements Styleable {
 
     public CharSequence hint1;
     public CharSequence hint2;
-
-    public ConfigBean setTransparentBehind(boolean transparentBehind) {
-        isTransparentBehind = transparentBehind;
-        return this;
-    }
-
     public boolean isTransparentBehind;
-
-
-
     public MyDialogListener listener;
     public MyItemDialogListener itemListener;
-
     public boolean cancelable = true;//默认可以点击后退键来dismiss对话框
     public boolean outsideTouchable = false;//默认外部半透明处点击不消失
-
     public Dialog dialog;
     public AlertDialog alertDialog;
-
-
-
-
-
     public int viewHeight;
-
-
     //各类对话框特有的参数
     public CharSequence[] wordsMd;
     public  int defaultChosen;//
     public boolean[] checkedItems;
-
-
     public List<? extends CharSequence> wordsIos;
     //bottom sheet
     public  CharSequence bottomTxt = "取消";
-
     //bottomsheet
     public SuperLvAdapter mAdapter;
     public List<BottomSheetBean> lvDatas;
     public int gridColumns = 4;
-
-
-
-    //样式
-
-    //三个以下按钮,颜色按此顺序
+    //样式--三个以下按钮,颜色按此顺序
     public  @ColorRes int btn1Color = DefaultConfig.iosBtnColor;
     public  @ColorRes int btn2Color= DefaultConfig.iosBtnColor;
     public  @ColorRes int btn3Color= DefaultConfig.iosBtnColor;
-
-
-
     public @ColorRes int titleTxtColor = DefaultConfig.titleTxtColor;
     public @ColorRes int msgTxtColor = DefaultConfig.msgTxtColor;
-
     public  @ColorRes int lvItemTxtColor = DefaultConfig.lvItemTxtColor;
     public Map<Integer,Integer> colorOfPosition;//listview 的item的特殊颜色:ColorRes
-
     public  @ColorRes int inputTxtColor = DefaultConfig.inputTxtColor;
-
+    //字体大小
+    public int btnTxtSize = DefaultConfig.btnTxtSize;// in sp
 
     /*可能需要拓展的功能，支持当个item字体大小和颜色设置 (比如底部弹出 ，有的item是红色字这种，有的是蓝色)
 支持填充自定义布局
 支持gridview 或者recylerview*/
-
-    //字体大小
-    public  int btnTxtSize = DefaultConfig.btnTxtSize;// in sp
     public  int titleTxtSize = DefaultConfig.titleTxtSize;
     public  int msgTxtSize = DefaultConfig.msgTxtSize;
     public  int itemTxtSize = DefaultConfig.itemTxtSize;
     public  int inputTxtSize = DefaultConfig.inputTxtSize;
 
+    public ConfigBean setTransparentBehind(boolean transparentBehind) {
+        isTransparentBehind = transparentBehind;
+        return this;
+    }
 
     @Override
     public ConfigBean setBtnColor(@ColorRes int btn1Color, @ColorRes int btn2Color, @ColorRes int btn3Color) {
@@ -214,20 +185,13 @@ public class ConfigBean extends MyDialogBuilder implements Styleable {
 
     @Override
     public Dialog show() {
-
         //Build dialog by tyle :
-
-
-
-
         buildByType(this);
         //内部保存loadingdialog对象
-
 
         if(type ==DefaultConfig.TYPE_PROGRESS){
 
         }
-
 
         if (dialog != null && !dialog.isShowing()){
             Tool.showDialog(dialog,this);
@@ -273,6 +237,4 @@ public class ConfigBean extends MyDialogBuilder implements Styleable {
         this.outsideTouchable = outsideCancelable;
         return this;
     }
-
-
 }

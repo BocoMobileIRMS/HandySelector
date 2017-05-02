@@ -20,10 +20,10 @@ import com.handy.selector.dialog.config.ConfigBean;
  * Created by Administrator on 2016/10/9 0009.
  */
 public class IosAlertDialogHolder extends SuperHolder {
-    protected TextView tvTitle;
     public TextView tvMsg;
     public EditText et1;
     public EditText et2;
+    protected TextView tvTitle;
     protected View line;
     protected Button btn1;
     protected View lineBtn2;
@@ -40,7 +40,6 @@ public class IosAlertDialogHolder extends SuperHolder {
     protected ScrollView sv;
 
 
-
     public IosAlertDialogHolder(Context context) {
         super(context);
     }
@@ -51,22 +50,21 @@ public class IosAlertDialogHolder extends SuperHolder {
         tvMsg = (TextView) rootView.findViewById(R.id.tv_msg);
         et1 = (EditText) rootView.findViewById(R.id.et_1);
         et2 = (EditText) rootView.findViewById(R.id.et_2);
-        line = (View) rootView.findViewById(R.id.line);
+        line = rootView.findViewById(R.id.line);
         btn1 = (Button) rootView.findViewById(R.id.btn_1);
-        lineBtn2 = (View) rootView.findViewById(R.id.line_btn2);
+        lineBtn2 = rootView.findViewById(R.id.line_btn2);
         btn2 = (Button) rootView.findViewById(R.id.btn_2);
-        lineBtn3 = (View) rootView.findViewById(R.id.line_btn3);
+        lineBtn3 = rootView.findViewById(R.id.line_btn3);
         btn3 = (Button) rootView.findViewById(R.id.btn_3);
         llContainerHorizontal = (LinearLayout) rootView.findViewById(R.id.ll_container_horizontal);
         btn1Vertical = (Button) rootView.findViewById(R.id.btn_1_vertical);
-        lineBtn2Vertical = (View) rootView.findViewById(R.id.line_btn2_vertical);
+        lineBtn2Vertical = rootView.findViewById(R.id.line_btn2_vertical);
         btn2Vertical = (Button) rootView.findViewById(R.id.btn_2_vertical);
-        lineBtn3Vertical = (View) rootView.findViewById(R.id.line_btn3_vertical);
+        lineBtn3Vertical = rootView.findViewById(R.id.line_btn3_vertical);
         btn3Vertical = (Button) rootView.findViewById(R.id.btn_3_vertical);
         llContainerVertical = (LinearLayout) rootView.findViewById(R.id.ll_container_vertical);
         sv = (ScrollView) rootView.findViewById(R.id.sv);
     }
-
 
     @Override
     protected int setLayoutRes() {
@@ -75,9 +73,7 @@ public class IosAlertDialogHolder extends SuperHolder {
 
     @Override
     public void assingDatasAndEvents(Context context, final ConfigBean bean) {
-
         //style
-
         btn3Vertical.setTextSize(bean.btnTxtSize);
         btn2Vertical.setTextSize(bean.btnTxtSize);
         btn1Vertical.setTextSize(bean.btnTxtSize);
@@ -85,15 +81,13 @@ public class IosAlertDialogHolder extends SuperHolder {
         btn2.setTextSize(bean.btnTxtSize);
         btn1.setTextSize(bean.btnTxtSize);
 
-        btn1.setTextColor(Tool.getColor(btn1.getContext(),bean.btn1Color));
-        btn2.setTextColor(Tool.getColor(btn1.getContext(),bean.btn2Color));
-        btn3.setTextColor(Tool.getColor(btn1.getContext(),bean.btn3Color));
+        btn1.setTextColor(Tool.getColor(btn1.getContext(), bean.btn1Color));
+        btn2.setTextColor(Tool.getColor(btn1.getContext(), bean.btn2Color));
+        btn3.setTextColor(Tool.getColor(btn1.getContext(), bean.btn3Color));
 
-        btn1Vertical.setTextColor(Tool.getColor(btn1.getContext(),bean.btn1Color));
-        btn2Vertical.setTextColor(Tool.getColor(btn1.getContext(),bean.btn2Color));
-        btn3Vertical.setTextColor(Tool.getColor(btn1.getContext(),bean.btn3Color));
-
-
+        btn1Vertical.setTextColor(Tool.getColor(btn1.getContext(), bean.btn1Color));
+        btn2Vertical.setTextColor(Tool.getColor(btn1.getContext(), bean.btn2Color));
+        btn3Vertical.setTextColor(Tool.getColor(btn1.getContext(), bean.btn3Color));
 
         //隐藏view
         if (bean.isVertical) {
@@ -109,12 +103,9 @@ public class IosAlertDialogHolder extends SuperHolder {
         } else {
             tvTitle.setVisibility(View.VISIBLE);
             tvTitle.setText(bean.title);
-            tvTitle.setTextColor(Tool.getColor(tvTitle.getContext(),bean.titleTxtColor));
+            tvTitle.setTextColor(Tool.getColor(tvTitle.getContext(), bean.titleTxtColor));
             tvTitle.setTextSize(bean.titleTxtSize);
         }
-
-
-
 
         if (TextUtils.isEmpty(bean.msg)) {
             tvMsg.setVisibility(View.GONE);
@@ -122,7 +113,7 @@ public class IosAlertDialogHolder extends SuperHolder {
             tvMsg.setVisibility(View.VISIBLE);
             tvMsg.setText(bean.msg);
 
-            tvMsg.setTextColor(Tool.getColor(tvMsg.getContext(),bean.msgTxtColor));
+            tvMsg.setTextColor(Tool.getColor(tvMsg.getContext(), bean.msgTxtColor));
             tvMsg.setTextSize(bean.msgTxtSize);
         }
 
@@ -137,7 +128,7 @@ public class IosAlertDialogHolder extends SuperHolder {
             et1.setVisibility(View.VISIBLE);
             et1.setHint(bean.hint1);
 
-            et1.setTextColor(Tool.getColor(et1.getContext(),bean.inputTxtColor));
+            et1.setTextColor(Tool.getColor(et1.getContext(), bean.inputTxtColor));
             et1.setTextSize(bean.inputTxtSize);
         }
 
@@ -146,16 +137,11 @@ public class IosAlertDialogHolder extends SuperHolder {
         } else {
             et2.setVisibility(View.VISIBLE);
             et2.setHint(bean.hint2);
-            et2.setTextColor(Tool.getColor(et2.getContext(),bean.inputTxtColor));
+            et2.setTextColor(Tool.getColor(et2.getContext(), bean.inputTxtColor));
             et2.setTextSize(bean.inputTxtSize);
         }
 
         //按钮数量
-
-
-
-
-
         if (TextUtils.isEmpty(bean.text3)) {
             if (bean.isVertical) {
                 btn3Vertical.setVisibility(View.GONE);
@@ -172,8 +158,6 @@ public class IosAlertDialogHolder extends SuperHolder {
                 btn3Vertical.setVisibility(View.VISIBLE);
                 lineBtn3Vertical.setVisibility(View.VISIBLE);
                 btn3Vertical.setText(bean.text3);
-
-
             } else {
                 btn3.setVisibility(View.VISIBLE);
                 lineBtn3.setVisibility(View.VISIBLE);
@@ -210,27 +194,21 @@ public class IosAlertDialogHolder extends SuperHolder {
             btn1.setText(bean.text1);
         }
 
-
         //事件
-
         if (bean.isVertical) {
             btn1Vertical.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    StyledDialog.dismiss(bean.dialog,bean.alertDialog);
+                    StyledDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onFirst();
-
-                    bean.listener.onGetInput(et1.getText().toString().trim(),et2.getText().toString().trim());
-
-
-
+                    bean.listener.onGetInput(et1.getText().toString().trim(), et2.getText().toString().trim());
                 }
             });
 
             btn2Vertical.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    StyledDialog.dismiss(bean.dialog,bean.alertDialog);
+                    StyledDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onSecond();
                 }
             });
@@ -238,26 +216,24 @@ public class IosAlertDialogHolder extends SuperHolder {
             btn3Vertical.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    StyledDialog.dismiss(bean.dialog,bean.alertDialog);
+                    StyledDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onThird();
                 }
             });
-
-
         } else {
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    StyledDialog.dismiss(bean.dialog,bean.alertDialog);
+                    StyledDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onFirst();
-                    bean.listener.onGetInput(et1.getText().toString().trim(),et2.getText().toString().trim());
+                    bean.listener.onGetInput(et1.getText().toString().trim(), et2.getText().toString().trim());
                 }
             });
 
             btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    StyledDialog.dismiss(bean.dialog,bean.alertDialog);
+                    StyledDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onSecond();
                 }
             });
@@ -265,15 +241,10 @@ public class IosAlertDialogHolder extends SuperHolder {
             btn3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    StyledDialog.dismiss(bean.dialog,bean.alertDialog);
+                    StyledDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onThird();
                 }
             });
-
         }
-
-
     }
-
-
 }

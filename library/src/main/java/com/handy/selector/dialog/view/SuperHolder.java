@@ -12,25 +12,22 @@ import com.handy.selector.dialog.config.ConfigBean;
 public abstract class SuperHolder {
     public View rootView;
 
-    public SuperHolder(Context context){
-        rootView = View.inflate(context,setLayoutRes(),null);
+    public SuperHolder(Context context) {
+        rootView = View.inflate(context, setLayoutRes(), null);
         findViews();
-
     }
 
     protected abstract void findViews();
 
-
-
-
-    protected abstract  @LayoutRes int setLayoutRes();
+    protected abstract
+    @LayoutRes
+    int setLayoutRes();
 
     /**
      * 一般情况下，实现这个方法就足够了
+     *
      * @param context
      * @param bean
      */
-    public  abstract void assingDatasAndEvents(Context context, ConfigBean bean);
-
-
+    public abstract void assingDatasAndEvents(Context context, ConfigBean bean);
 }

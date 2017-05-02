@@ -22,8 +22,6 @@ import java.util.List;
  */
 public class StyledDialog {
 
-    //android.support.v7.app.
-
     public static Context context;
 
     private static int singleChosen;
@@ -60,7 +58,6 @@ public class StyledDialog {
             isMiUi8 = true;
         }*/
         mainHandler = new Handler(Looper.getMainLooper());
-
     }
 
     /**
@@ -75,7 +72,6 @@ public class StyledDialog {
             tv_msg = null;
         }
     }
-
 
     /**
      * 一键让loading消失.
@@ -96,10 +92,8 @@ public class StyledDialog {
                     }
                 }, 500 - timePassed);
             }
-
         }
     }
-
 
     public static void dismiss(DialogInterface... dialogs) {
         if (dialogs != null && dialogs.length > 0) {
@@ -112,7 +106,6 @@ public class StyledDialog {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-
                     }
                 } else if (dialog instanceof AppCompatDialog) {
                     AppCompatDialog dialog2 = (AppCompatDialog) dialog;
@@ -122,11 +115,9 @@ public class StyledDialog {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-
                     }
                 }
             }
-
         }
     }
 
@@ -148,7 +139,6 @@ public class StyledDialog {
 
                 }
             });
-
         }
     }
 
@@ -162,7 +152,6 @@ public class StyledDialog {
      * @param isHorizontal 是水平线状,还是转圈圈
      */
     public static void updateProgress(final Dialog dialog, final int progress, final int max, final CharSequence msg, final boolean isHorizontal) {
-
         getMainHandler().post(new Runnable() {
             @Override
             public void run() {
@@ -179,8 +168,6 @@ public class StyledDialog {
                 }
             }
         });
-
-
     }
 
     public static ConfigBean buildLoading(CharSequence msg) {
@@ -199,11 +186,9 @@ public class StyledDialog {
         return DialogAssigner.getInstance().assignMdLoading(null, msg, true, false);
     }
 
-
     public static ConfigBean buildMdAlert(CharSequence title, CharSequence msg, MyDialogListener listener) {
         return DialogAssigner.getInstance().assignMdAlert(null, title, msg, listener);
     }
-
 
     public static ConfigBean buildMdSingleChoose(CharSequence title, int defaultChosen, CharSequence[] words, MyItemDialogListener listener) {
         return DialogAssigner.getInstance().assignMdSingleChoose(null, title, defaultChosen, words, listener);
@@ -218,26 +203,21 @@ public class StyledDialog {
         return DialogAssigner.getInstance().assignMdMultiChoose(null, title, words, selectedIndexs, btnListener);
     }
 
-
     public static ConfigBean buildIosAlert(CharSequence title, CharSequence msg, MyDialogListener listener) {
         return DialogAssigner.getInstance().assignIosAlert(null, title, msg, listener);
     }
-
 
     public static ConfigBean buildIosAlertVertical(CharSequence title, CharSequence msg, MyDialogListener listener) {
         return DialogAssigner.getInstance().assignIosAlertVertical(null, title, msg, listener);
     }
 
-
     public static ConfigBean buildIosSingleChoose(List<? extends CharSequence> words, MyItemDialogListener listener) {
         return DialogAssigner.getInstance().assignIosSingleChoose(null, words, listener);
     }
 
-
     public static ConfigBean buildBottomItemDialog(List<? extends CharSequence> words, CharSequence bottomTxt, MyItemDialogListener listener) {
         return DialogAssigner.getInstance().assignBottomItemDialog(null, words, bottomTxt, listener);
     }
-
 
     public static ConfigBean buildNormalInput(CharSequence title, CharSequence hint1, CharSequence hint2, CharSequence firstTxt, CharSequence secondTxt, MyDialogListener listener) {
         return DialogAssigner.getInstance().assignNormalInput(null, title, hint1, hint2, firstTxt, secondTxt, listener);

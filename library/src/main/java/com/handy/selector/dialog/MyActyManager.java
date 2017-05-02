@@ -12,11 +12,8 @@ import java.lang.ref.WeakReference;
  */
 
 public class MyActyManager {
-
-
     private static MyActyManager sInstance = new MyActyManager();
     private WeakReference<Activity> sCurrentActivityWeakRef;
-
 
     private MyActyManager() {
 

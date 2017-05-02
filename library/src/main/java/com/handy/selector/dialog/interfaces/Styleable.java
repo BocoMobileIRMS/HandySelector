@@ -18,15 +18,19 @@ public interface Styleable {
     ConfigBean setListItemColor(@ColorRes int lvItemTxtColor, Map<Integer, Integer> colorOfPosition);
 
     ConfigBean setTitleColor(@ColorRes int colorRes);
+
     ConfigBean setMsgColor(@ColorRes int colorRes);
+
     ConfigBean seInputColor(@ColorRes int colorRes);
 
-
-
     ConfigBean setTitleSize(int sizeInSp);
+
     ConfigBean setMsgSize(int sizeInSp);
+
     ConfigBean setBtnSize(int sizeInSp);
+
     ConfigBean setLvItemSize(int sizeInSp);
+
     ConfigBean setInputSize(int sizeInSp);
 
     Dialog show();
@@ -38,14 +42,5 @@ public interface Styleable {
 
     ConfigBean setListener(MyDialogListener listener);
 
-
-
     ConfigBean setCancelable(boolean cancelable, boolean outsideCancelable);
-
-
-
-
-
-
-
 }

@@ -17,6 +17,11 @@ public abstract class SuperLvAdapter extends BaseAdapter implements Refreshable 
     Context context;
     boolean isListViewFling;
 
+    public SuperLvAdapter(Context context) {
+        this.datas = new ArrayList();
+        this.context = context;
+    }
+
     public boolean isListViewFling() {
         return isListViewFling;
     }
@@ -25,19 +30,12 @@ public abstract class SuperLvAdapter extends BaseAdapter implements Refreshable 
         isListViewFling = listViewFling;
     }
 
-
-    public SuperLvAdapter(Context context) {
-        this.datas = new ArrayList();
-        this.context = context;
-    }
-
     @Override
     public int getCount() {
         if (datas == null)
             return 0;
         return datas.size();
     }
-
 
     @Override
     public Object getItem(int position) {

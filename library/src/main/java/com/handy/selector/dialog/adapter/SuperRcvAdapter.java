@@ -12,12 +12,17 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/8/22 0022.
  */
-public  abstract   class SuperRcvAdapter extends RecyclerView.Adapter<SuperRcvHolder> implements Refreshable {
+public abstract class SuperRcvAdapter extends RecyclerView.Adapter<SuperRcvHolder> implements Refreshable {
 
-
+    boolean isListViewFling;
     private List datas;
     private Activity context;
-    boolean isListViewFling;
+
+    public SuperRcvAdapter(Activity context) {
+
+        this.datas = new ArrayList();
+        this.context = context;
+    }
 
     public boolean isListViewFling() {
         return isListViewFling;
@@ -27,25 +32,15 @@ public  abstract   class SuperRcvAdapter extends RecyclerView.Adapter<SuperRcvHo
         isListViewFling = listViewFling;
     }
 
-
-
-    public SuperRcvAdapter( Activity context){
-
-        this.datas = new ArrayList();
-        this.context = context;
-
-
-    }
-
     /**
      * 工具方法
+     *
      * @param layoutRes
      * @return
      */
-    public  View inflate(@LayoutRes int layoutRes){
-        return View.inflate(context, layoutRes,null);
+    public View inflate(@LayoutRes int layoutRes) {
+        return View.inflate(context, layoutRes, null);
     }
-
 
     @Override
     public SuperRcvHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -56,7 +51,7 @@ public  abstract   class SuperRcvAdapter extends RecyclerView.Adapter<SuperRcvHo
 
     @Override
     public void onBindViewHolder(SuperRcvHolder holder, int position) {
-        holder.assignDatasAndEvents(context,datas.get(position),position,position == getItemCount() -1,isListViewFling,datas,this);
+        holder.assignDatasAndEvents(context, datas.get(position), position, position == getItemCount() - 1, isListViewFling, datas, this);
     }
 
     @Override
@@ -66,15 +61,15 @@ public  abstract   class SuperRcvAdapter extends RecyclerView.Adapter<SuperRcvHo
 
     @Override
     public void refresh(List newData) {
-        if (newData == null){
+        if (newData == null) {
             datas.clear();
             notifyDataSetChanged();
             return;
         }
-        if (datas == null){
+        if (datas == null) {
             datas = newData;
             notifyDataSetChanged();
-        }else {
+        } else {
             datas.clear();
             datas.addAll(newData);
             notifyDataSetChanged();
@@ -83,13 +78,13 @@ public  abstract   class SuperRcvAdapter extends RecyclerView.Adapter<SuperRcvHo
 
     @Override
     public void addAll(List newData) {
-        if (newData == null){
+        if (newData == null) {
             return;
         }
-        if (datas == null){
+        if (datas == null) {
             datas = newData;
             notifyDataSetChanged();
-        }else {
+        } else {
             datas.addAll(newData);
             notifyDataSetChanged();
         }
@@ -97,7 +92,7 @@ public  abstract   class SuperRcvAdapter extends RecyclerView.Adapter<SuperRcvHo
 
     @Override
     public void clear() {
-        if (datas != null){
+        if (datas != null) {
             datas.clear();
             notifyDataSetChanged();
         }
@@ -105,7 +100,7 @@ public  abstract   class SuperRcvAdapter extends RecyclerView.Adapter<SuperRcvHo
 
     @Override
     public void delete(int position) {
-        if (datas != null && position < getItemCount()){
+        if (datas != null && position < getItemCount()) {
             datas.remove(position);
             notifyItemRemoved(position);
         }
@@ -113,14 +108,14 @@ public  abstract   class SuperRcvAdapter extends RecyclerView.Adapter<SuperRcvHo
 
     @Override
     public void add(Object object) {
-        if (object != null){
+        if (object != null) {
             datas.add(object);
-            notifyItemInserted(datas.size() -1);
+            notifyItemInserted(datas.size() - 1);
         }
 
     }
 
-    public List getListData(){
+    public List getListData() {
         return datas;
     }
 

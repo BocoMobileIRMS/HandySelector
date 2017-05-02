@@ -108,14 +108,11 @@ public class DialogAssigner implements Assignable {
         bean.btn1Color = DefaultConfig.mdBtnColor;
         bean.btn2Color = DefaultConfig.mdBtnColor;
         bean.btn3Color = DefaultConfig.mdBtnColor;
-
-
         return bean;
     }
 
     @Override
-    public ConfigBean assignMdMultiChoose(Activity context, CharSequence title, CharSequence[] words,
-                                          List<Integer> selectedIndexs, MyDialogListener btnListener) {
+    public ConfigBean assignMdMultiChoose(Activity context, CharSequence title, CharSequence[] words, List<Integer> selectedIndexs, MyDialogListener btnListener) {
         boolean[] checkedItems = new boolean[words.length];
         for (int i = 0; i < words.length; i++) {
             checkedItems[i] = false;
@@ -159,7 +156,6 @@ public class DialogAssigner implements Assignable {
         bean.itemListener = listener;
         bean.wordsIos = words;
         bean.type = DefaultConfig.TYPE_IOS_CENTER_LIST;
-
         return bean;
     }
 
@@ -174,8 +170,7 @@ public class DialogAssigner implements Assignable {
     }
 
     @Override
-    public ConfigBean assignNormalInput(Context context, CharSequence title, CharSequence hint1, CharSequence hint2,
-                                        CharSequence firstTxt, CharSequence secondTxt, MyDialogListener listener) {
+    public ConfigBean assignNormalInput(Context context, CharSequence title, CharSequence hint1, CharSequence hint2, CharSequence firstTxt, CharSequence secondTxt, MyDialogListener listener) {
         ConfigBean bean = new ConfigBean();
         bean.context = context;
         bean.listener = listener;
@@ -213,10 +208,8 @@ public class DialogAssigner implements Assignable {
         bean.context = context;
         bean.msg = msg;
         bean.type = DefaultConfig.TYPE_IOS_LOADING;
-
         bean.cancelable = cancelable;
         bean.outsideTouchable = outsideTouchable;
-
         return bean;
     }
 
@@ -244,6 +237,4 @@ public class DialogAssigner implements Assignable {
         bean.type = DefaultConfig.TYPE_BOTTOM_SHEET_GRID;
         return bean;
     }
-
-
 }

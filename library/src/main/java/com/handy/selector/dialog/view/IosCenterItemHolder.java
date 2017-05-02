@@ -26,7 +26,6 @@ public class IosCenterItemHolder extends SuperHolder {
     @Override
     protected void findViews() {
         lv = (ListView) rootView.findViewById(R.id.lv);
-
         lv.setDivider(new ColorDrawable(lv.getResources().getColor(R.color.line_dd)));
         lv.setDividerHeight(1);
     }
@@ -56,34 +55,29 @@ public class IosCenterItemHolder extends SuperHolder {
 
             @Override
             public View getView(final int position, View convertView, ViewGroup parent) {
-                RelativeLayout root = (RelativeLayout) View.inflate(context,R.layout.item_btn_bottomalert,null);
+                RelativeLayout root = (RelativeLayout) View.inflate(context, R.layout.item_btn_bottomalert, null);
                 Button view = (Button) root.findViewById(R.id.btn);
-                if (getCount() >=2){
-                    if (position ==0){
+                if (getCount() >= 2) {
+                    if (position == 0) {
                         view.setBackgroundResource(R.drawable.selector_btn_press_all_top);
-                    }else if (position == getCount() -1){
+                    } else if (position == getCount() - 1) {
                         view.setBackgroundResource(R.drawable.selector_btn_press_all_bottom);
-                    }else {
+                    } else {
                         view.setBackgroundResource(R.drawable.selector_btn_press_no_corner);
                     }
-
-                }else {
+                } else {
                     view.setBackgroundResource(R.drawable.selector_btn_press_all);
                 }
                 view.setText(bean.wordsIos.get(position));
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        StyledDialog.dismiss(bean.alertDialog,bean.dialog);
-                        bean.itemListener.onItemClick(bean.wordsIos.get(position),position);
-
+                        StyledDialog.dismiss(bean.alertDialog, bean.dialog);
+                        bean.itemListener.onItemClick(bean.wordsIos.get(position), position);
                     }
                 });
-
                 return root;
             }
         });
     }
-
-
 }

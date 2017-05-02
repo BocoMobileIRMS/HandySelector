@@ -29,6 +29,7 @@ public class Tool {
 
     /**
      * 解决badtoken问题,一劳永逸
+     *
      * @param dialog
      */
     public static void showDialog(final Dialog dialog, final ConfigBean bean) {
@@ -37,21 +38,16 @@ public class Tool {
             public void run() {
                 try {
                     dialog.show();
-                    if (bean.alertDialog!= null){
+                    if (bean.alertDialog != null) {
                         setMdBtnStytle(bean);
                         //setListItemsStyle(bean);
                     }
-                    adjustWindow(dialog,bean);
-
-
-
-
-                }catch (Exception e){
+                    adjustWindow(dialog, bean);
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
-
     }
 
     private static void adjustWindow(final Dialog dialog, final ConfigBean bean) {
@@ -59,91 +55,83 @@ public class Tool {
                 .addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
-                        adjustWH(dialog,bean);
+                        adjustWH(dialog, bean);
                         dialog.getWindow().getDecorView().getViewTreeObserver().removeGlobalOnLayoutListener(this);
                     }
                 });
     }
 
-
     /**
      * 必须在show之后,button才不会返回null
+     *
      * @param bean
      */
-    public static void setMdBtnStytle(ConfigBean bean){
-        Button btnPositive =
-                bean.alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
-        Button btnNegative =
-                bean.alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
-        Button btnNatural =
-                bean.alertDialog.getButton(DialogInterface.BUTTON_NEUTRAL);
+    public static void setMdBtnStytle(ConfigBean bean) {
+        Button btnPositive = bean.alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+        Button btnNegative = bean.alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
+        Button btnNatural = bean.alertDialog.getButton(DialogInterface.BUTTON_NEUTRAL);
 
         //todo null
-        if(btnPositive !=null){
-            if(TextUtils.isEmpty(bean.text1)){
+        if (btnPositive != null) {
+            if (TextUtils.isEmpty(bean.text1)) {
                 btnPositive.setText(bean.text1);
             }
             if (bean.btn1Color > 0)
-                btnPositive.setTextColor(getColor(null,bean.btn1Color));
-            if(bean.btnTxtSize >0){
+                btnPositive.setTextColor(getColor(null, bean.btn1Color));
+            if (bean.btnTxtSize > 0) {
                 btnPositive.setTextSize(bean.btnTxtSize);
             }
         }
-        if(btnNegative !=null){
-            if(TextUtils.isEmpty(bean.text2)){
+        if (btnNegative != null) {
+            if (TextUtils.isEmpty(bean.text2)) {
                 btnNegative.setText(bean.text2);
             }
-            if (bean.btn2Color > 0 )
-                if(bean.btn2Color == DefaultConfig.iosBtnColor ){
+            if (bean.btn2Color > 0)
+                if (bean.btn2Color == DefaultConfig.iosBtnColor) {
                     btnNegative.setTextColor(getColor(null, R.color.text_gray));
-                }else {
-                    btnNegative.setTextColor(getColor(null,bean.btn2Color));
+                } else {
+                    btnNegative.setTextColor(getColor(null, bean.btn2Color));
                 }
-
-            if(bean.btnTxtSize >0){
+            if (bean.btnTxtSize > 0) {
                 btnNegative.setTextSize(bean.btnTxtSize);
             }
         }
 
-        if(btnNatural !=null){
-            if(TextUtils.isEmpty(bean.text3)){
+        if (btnNatural != null) {
+            if (TextUtils.isEmpty(bean.text3)) {
                 btnNatural.setText(bean.text3);
             }
             if (bean.btn3Color > 0)
-                btnNatural.setTextColor(getColor(null,bean.btn3Color));
-            if(bean.btnTxtSize >0){
+                btnNatural.setTextColor(getColor(null, bean.btn3Color));
+            if (bean.btnTxtSize > 0) {
                 btnNatural.setTextSize(bean.btnTxtSize);
             }
         }
-
-
     }
 
-    public static ConfigBean fixContext(ConfigBean bean){
-        if (bean.context instanceof Activity){
+    public static ConfigBean fixContext(ConfigBean bean) {
+        if (bean.context instanceof Activity) {
             Activity activity1 = (Activity) bean.context;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                if (!activity1.isDestroyed()){
+                if (!activity1.isDestroyed()) {
                     return bean;
                 }
-            }else {
+            } else {
                 return bean;
             }
         }
         Activity activity = MyActyManager.getInstance().getCurrentActivity();
-        if(activity!=null){
+        if (activity != null) {
             bean.context = activity;
             return bean;
         }
-
-        if (bean.context == null){
+        if (bean.context == null) {
             bean.context = StyledDialog.context;
         }
-
-        if (bean.context instanceof Activity){
+        if (bean.context instanceof Activity) {
             Activity activity1 = (Activity) bean.context;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                if (activity1.isDestroyed()){
+                if (activity1.isDestroyed()) {
                     bean.context = StyledDialog.context;
                 }
             }
@@ -151,40 +139,31 @@ public class Tool {
         return bean;
     }
 
-    public static ConfigBean newCustomDialog(ConfigBean bean){
+    public static ConfigBean newCustomDialog(ConfigBean bean) {
         Dialog dialog = new Dialog(bean.context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         bean.dialog = dialog;
         return bean;
     }
 
-    public static ConfigBean setCancelable(ConfigBean bean){
-
-        if (bean.alertDialog != null){
+    public static ConfigBean setCancelable(ConfigBean bean) {
+        if (bean.alertDialog != null) {
             bean.alertDialog.setCancelable(bean.cancelable);
             bean.alertDialog.setCanceledOnTouchOutside(bean.outsideTouchable);
             bean.alertDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
-        }else if (bean.dialog != null){
+        } else if (bean.dialog != null) {
             bean.dialog.setCancelable(bean.cancelable);
             bean.dialog.setCanceledOnTouchOutside(bean.outsideTouchable);
             bean.dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
         }
-
-
         return bean;
     }
 
-
-
-
-
     public static Dialog buildDialog(Context context, boolean cancleable, boolean outsideTouchable) {
-
-
-        if (context instanceof Activity){//todo keycode
+        if (context instanceof Activity) {//todo keycode
             Activity activity = (Activity) context;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                if (activity.isDestroyed()){
+                if (activity.isDestroyed()) {
                     context = StyledDialog.context;
                 }
             }
@@ -208,69 +187,66 @@ public class Tool {
         }*/
 
         setBg(bean);
-       // bean.isTransparentBehind = true;
+        // bean.isTransparentBehind = true;
         setDim(bean);
-        Dialog dialog = bean.dialog ==null ? bean.alertDialog : bean.dialog;
+        Dialog dialog = bean.dialog == null ? bean.alertDialog : bean.dialog;
         Window window = dialog.getWindow();
-        if(bean.context instanceof Activity){
+        if (bean.context instanceof Activity) {
 
-        }else {
+        } else {
             window.setType(WindowManager.LayoutParams.TYPE_TOAST);
             //todo keycode to improve window level,同时要让它的后面半透明背景也拦截事件,不要传递到下面去
             //todo 单例化,不然连续弹出两次,只能关掉第二次的
         }
-
     }
 
     private static void setDim(ConfigBean bean) {
-        if(bean.type == DefaultConfig.TYPE_IOS_LOADING){//转菊花,则让背景透明
+        if (bean.type == DefaultConfig.TYPE_IOS_LOADING) {//转菊花,则让背景透明
             bean.isTransparentBehind = true;
         }
-        if (bean.alertDialog!= null){
-           if(bean.isTransparentBehind){
-               bean.alertDialog.getWindow().setDimAmount(0);
-           }
-            bean.alertDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED );
-        }else {
-            if(bean.isTransparentBehind){
+        if (bean.alertDialog != null) {
+            if (bean.isTransparentBehind) {
+                bean.alertDialog.getWindow().setDimAmount(0);
+            }
+            bean.alertDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+        } else {
+            if (bean.isTransparentBehind) {
                 bean.dialog.getWindow().setDimAmount(0);
             }
-            bean.dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED );
+            bean.dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
         }
     }
 
     private static void setBg(ConfigBean bean) {
-        if (bean.alertDialog!= null){
+        if (bean.alertDialog != null) {
             bean.alertDialog.getWindow().setBackgroundDrawableResource(R.drawable.shadow);
-        }else {
-            if(bean.type == DefaultConfig.TYPE_BOTTOM_SHEET_GRID
+        } else {
+            if (bean.type == DefaultConfig.TYPE_BOTTOM_SHEET_GRID
                     || bean.type == DefaultConfig.TYPE_BOTTOM_SHEET_LIST
                     || bean.type == DefaultConfig.TYPE_BOTTOM_SHEET_CUSTOM
-                    || bean.type == DefaultConfig.TYPE_PROGRESS){
-            }else if(bean.type == DefaultConfig.TYPE_IOS_LOADING){//转菊花时,背景透明
+                    || bean.type == DefaultConfig.TYPE_PROGRESS) {
+            } else if (bean.type == DefaultConfig.TYPE_IOS_LOADING) {//转菊花时,背景透明
                 bean.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            }else {
+            } else {
                 bean.dialog.getWindow().setBackgroundDrawableResource(R.drawable.shadow);
             }
-
         }
     }
 
 
-
     private static void addShaow(ConfigBean bean) {
         /**/
-        if(bean.type == DefaultConfig.TYPE_IOS_LOADING
+        if (bean.type == DefaultConfig.TYPE_IOS_LOADING
                 || bean.type == DefaultConfig.TYPE_PROGRESS
                 || bean.type == DefaultConfig.TYPE_BOTTOM_SHEET_CUSTOM
                 || bean.type == DefaultConfig.TYPE_BOTTOM_SHEET_LIST
                 || bean.type == DefaultConfig.TYPE_BOTTOM_SHEET_GRID
-                || bean.type == DefaultConfig.TYPE_IOS_BOTTOM){
+                || bean.type == DefaultConfig.TYPE_IOS_BOTTOM) {
             return;
         }
 
         Dialog dialog = bean.dialog;
-        if(dialog ==null){
+        if (dialog == null) {
             dialog = bean.alertDialog;
         }
 
@@ -295,35 +271,31 @@ public class Tool {
     }
 
     private static void setListItemsStyle(ConfigBean bean) {
-        if(bean.type == DefaultConfig.TYPE_MD_SINGLE_CHOOSE || bean.type == DefaultConfig.TYPE_MD_MULTI_CHOOSE){
-            ListView listView =  bean.alertDialog.getListView();
-           // listView.getAdapter().
-            if(listView!=null && listView.getAdapter() !=null){
-                for(int i=0;i<listView.getAdapter().getCount();i++){
+        if (bean.type == DefaultConfig.TYPE_MD_SINGLE_CHOOSE || bean.type == DefaultConfig.TYPE_MD_MULTI_CHOOSE) {
+            ListView listView = bean.alertDialog.getListView();
+            // listView.getAdapter().
+            if (listView != null && listView.getAdapter() != null) {
+                for (int i = 0; i < listView.getAdapter().getCount(); i++) {
                     View childAt = listView.getChildAt(i);
-                    if(childAt ==null){
+                    if (childAt == null) {
                         continue;
                     }
                     CheckedTextView itemView = (CheckedTextView) childAt.findViewById(android.R.id.text1);
-                    if(itemView !=null) {
+                    if (itemView != null) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                          Drawable drawable = itemView.getCheckMarkDrawable();
-                           // drawable.get
+                            Drawable drawable = itemView.getCheckMarkDrawable();
+                            // drawable.get
                         }
-                       // itemView.setCheckMarkTintList();
+                        // itemView.setCheckMarkTintList();
                         //itemView.setCheckMarkTintList();
-
                     }
-
                 }
-
             }
-
         }
     }
 
-    public static void adjustWH( Dialog dialog,  ConfigBean bean ) {
-        if (dialog == null){
+    public static void adjustWH(Dialog dialog, ConfigBean bean) {
+        if (dialog == null) {
             return;
         }
 
@@ -337,31 +309,30 @@ public class Tool {
         int measuredHeight = rootView.getMeasuredHeight();
 
         float ratio = 0.85f;
-        if(bean.type ==DefaultConfig.TYPE_IOS_BOTTOM){
+        if (bean.type == DefaultConfig.TYPE_IOS_BOTTOM) {
             ratio = 0.95f;
-        }else if(bean.type ==DefaultConfig.TYPE_IOS_CENTER_LIST){
+        } else if (bean.type == DefaultConfig.TYPE_IOS_CENTER_LIST) {
             ratio = 0.9f;
         }
-        if(width > height){//宽屏
+        if (width > height) {//宽屏
             ratio = 0.5f;
         }
 
-        if(istheTypeOfNotAdjust(bean.type)){
+        if (istheTypeOfNotAdjust(bean.type)) {
             /*wl.width = ViewGroup.LayoutParams.WRAP_CONTENT;
             wl.height = ViewGroup.LayoutParams.WRAP_CONTENT;*/
-        }else {
-           // rootView.setPadding(0,30,0,30);
+        } else {
+            // rootView.setPadding(0,30,0,30);
             wl.width = (int) (width * ratio);
-            if (measuredHeight > height* 0.9){
-                wl.height = (int) (height* 0.9);
+            if (measuredHeight > height * 0.9) {
+                wl.height = (int) (height * 0.9);
             }
         }
-
         dialog.onWindowAttributesChanged(wl);
     }
 
     private static boolean istheTypeOfNotAdjust(int type) {
-        switch (type){
+        switch (type) {
             case DefaultConfig.TYPE_IOS_LOADING:
             case DefaultConfig.TYPE_PROGRESS:
             case DefaultConfig.TYPE_BOTTOM_SHEET_CUSTOM:
@@ -374,7 +345,7 @@ public class Tool {
     }
 
     private static boolean isCustomType(ConfigBean bean) {
-        switch (bean.type){
+        switch (bean.type) {
             case DefaultConfig.TYPE_IOS_HORIZONTAL:
             case DefaultConfig.TYPE_IOS_VERTICAL:
             case DefaultConfig.TYPE_IOS_BOTTOM:
@@ -385,58 +356,49 @@ public class Tool {
             case DefaultConfig.TYPE_MD_ALERT:
             case DefaultConfig.TYPE_MD_MULTI_CHOOSE:
             case DefaultConfig.TYPE_MD_SINGLE_CHOOSE:
-            return true;
+                return true;
             default:
                 return false;
         }
     }
 
-
     public static void measureView(View child) {
         ViewGroup.LayoutParams p = child.getLayoutParams();
         if (p == null) {
-            p = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT
-                    ,
-                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            p = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         }
         int lpHeight = p.height;
         int lpWidth = p.width;
         int childHeightSpec;
         int childWidthSpec;
         if (lpHeight > 0) {   //如果Height是一个定值，那么我们测量的时候就使用这个定值
-            childHeightSpec = View.MeasureSpec.makeMeasureSpec(lpHeight,
-                    View.MeasureSpec.EXACTLY);
+            childHeightSpec = View.MeasureSpec.makeMeasureSpec(lpHeight, View.MeasureSpec.EXACTLY);
         } else {  // 否则，我们将mode设置为不指定，size设置为0
-            childHeightSpec = View.MeasureSpec.makeMeasureSpec(0,
-                    View.MeasureSpec.UNSPECIFIED);
+            childHeightSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         }
         if (lpWidth > 0) {
-            childWidthSpec= View.MeasureSpec.makeMeasureSpec(lpHeight,
-                    View.MeasureSpec.EXACTLY);
+            childWidthSpec = View.MeasureSpec.makeMeasureSpec(lpHeight, View.MeasureSpec.EXACTLY);
         } else {
-            childWidthSpec= View.MeasureSpec.makeMeasureSpec(0,
-                    View.MeasureSpec.UNSPECIFIED);
+            childWidthSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         }
         child.measure(childWidthSpec, childHeightSpec);
     }
 
     /**
-     *
      * @param root
-     * @param id  height为0,weight为1的scrollview包裹的view的id,如果没有,传0或负数即可
+     * @param id   height为0,weight为1的scrollview包裹的view的id,如果没有,传0或负数即可
      * @return
      */
     public static int mesureHeight(View root, int id) {
         measureView(root);
         int height = root.getMeasuredHeight();
         int heightExtra = 0;
-        if (id > 0){
+        if (id > 0) {
             View view = root.findViewById(id);
-            if (view != null){
+            if (view != null) {
                 measureView(view);
                 heightExtra = view.getMeasuredHeight();
             }
-
         }
         return height + heightExtra;
     }
@@ -445,62 +407,51 @@ public class Tool {
         measureView(root);
         int height = root.getMeasuredHeight();
         int heightExtra = 0;
-        if (subViews != null && subViews.length>0){
-            for (View view : subViews){
-                if(view.getVisibility() == View.VISIBLE){//确保设置了gone的view不再出现
+        if (subViews != null && subViews.length > 0) {
+            for (View view : subViews) {
+                if (view.getVisibility() == View.VISIBLE) {//确保设置了gone的view不再出现
                     measureView(view);
                     heightExtra += view.getMeasuredHeight();
                 }
-
             }
-
         }
-
         return height + heightExtra;
     }
 
-    public static int getColor(Context context,int colorRes){
-        if (context ==null){
+    public static int getColor(Context context, int colorRes) {
+        if (context == null) {
             context = StyledDialog.context;
         }
-       return context.getResources().getColor(colorRes);
-
+        return context.getResources().getColor(colorRes);
     }
-
 
     public static void setCancelListener(final ConfigBean bean) {
 
-            if(bean.dialog!=null){
-                bean.dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                    @Override
-                    public void onCancel(DialogInterface dialog) {
-                        if(bean.listener!=null) {
-                            bean.listener.onCancle();
-                        }
-                        if (bean.dialog == StyledDialog.getLoadingDialog()) {
-                            StyledDialog.setLoadingObj(null);
-
-                        }
-
+        if (bean.dialog != null) {
+            bean.dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    if (bean.listener != null) {
+                        bean.listener.onCancle();
                     }
-                });
-            }
-            if(bean.alertDialog!=null){
-                bean.alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                    @Override
-                    public void onCancel(DialogInterface dialog) {
-                        if (bean.listener != null) {
-                            bean.listener.onCancle();
-                        }
-                        if (bean.alertDialog == StyledDialog.getLoadingDialog()) {
-                            StyledDialog.setLoadingObj(null);
-                        }
+                    if (bean.dialog == StyledDialog.getLoadingDialog()) {
+                        StyledDialog.setLoadingObj(null);
                     }
-                });
-
-
-            }
-
-
+                }
+            });
+        }
+        if (bean.alertDialog != null) {
+            bean.alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    if (bean.listener != null) {
+                        bean.listener.onCancle();
+                    }
+                    if (bean.alertDialog == StyledDialog.getLoadingDialog()) {
+                        StyledDialog.setLoadingObj(null);
+                    }
+                }
+            });
+        }
     }
 }

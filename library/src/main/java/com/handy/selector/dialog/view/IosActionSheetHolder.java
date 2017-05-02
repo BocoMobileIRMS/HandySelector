@@ -29,7 +29,6 @@ public class IosActionSheetHolder extends SuperHolder {
     @Override
     protected void findViews() {
         lv = (ListView) rootView.findViewById(R.id.lv);
-
         lv.setDivider(new ColorDrawable(lv.getResources().getColor(R.color.line_dd)));
         lv.setDividerHeight(1);
         btnBottom = (Button) rootView.findViewById(R.id.btn_bottom);
@@ -42,17 +41,16 @@ public class IosActionSheetHolder extends SuperHolder {
 
     @Override
     public void assingDatasAndEvents(final Context context, final ConfigBean bean) {
-        if (TextUtils.isEmpty(bean.bottomTxt)){
+        if (TextUtils.isEmpty(bean.bottomTxt)) {
             btnBottom.setVisibility(View.GONE);
-        }else {
+        } else {
             btnBottom.setVisibility(View.VISIBLE);
             btnBottom.setText(bean.bottomTxt);
             btnBottom.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StyledDialog.dismiss(bean.dialog,bean.alertDialog);
+                    StyledDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.itemListener.onBottomBtnClick();
-
                 }
             });
         }
@@ -76,38 +74,30 @@ public class IosActionSheetHolder extends SuperHolder {
 
             @Override
             public View getView(final int position, View convertView, ViewGroup parent) {
-
-                RelativeLayout root = (RelativeLayout) View.inflate(context,R.layout.item_btn_bottomalert,null);
+                RelativeLayout root = (RelativeLayout) View.inflate(context, R.layout.item_btn_bottomalert, null);
                 Button view = (Button) root.findViewById(R.id.btn);
-                if (getCount() >=2){
-                    if (position ==0){
+                if (getCount() >= 2) {
+                    if (position == 0) {
                         view.setBackgroundResource(R.drawable.selector_btn_press_all_top);
-                    }else if (position == getCount() -1){
+                    } else if (position == getCount() - 1) {
                         view.setBackgroundResource(R.drawable.selector_btn_press_all_bottom);
-                    }else {
+                    } else {
                         view.setBackgroundResource(R.drawable.selector_btn_press_no_corner);
                     }
-
-                }else {
+                } else {
                     view.setBackgroundResource(R.drawable.selector_btn_press_all);
                 }
-
                 view.setText(bean.wordsIos.get(position));
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        StyledDialog.dismiss(bean.dialog,bean.alertDialog);
-                        bean.itemListener.onItemClick(bean.wordsIos.get(position),position);
-
+                        StyledDialog.dismiss(bean.dialog, bean.alertDialog);
+                        bean.itemListener.onItemClick(bean.wordsIos.get(position), position);
                     }
                 });
-
                 return root;
             }
         };
-
         lv.setAdapter(adapter);
     }
-
-
 }
