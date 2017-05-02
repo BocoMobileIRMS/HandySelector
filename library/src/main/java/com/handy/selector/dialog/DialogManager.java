@@ -11,15 +11,15 @@ import java.lang.ref.WeakReference;
  * 参考:https://zhuanlan.zhihu.com/p/25221428
  */
 
-public class MyActyManager {
-    private static MyActyManager sInstance = new MyActyManager();
+public class DialogManager {
+    private static DialogManager sInstance = new DialogManager();
     private WeakReference<Activity> sCurrentActivityWeakRef;
 
-    private MyActyManager() {
+    private DialogManager() {
 
     }
 
-    public static MyActyManager getInstance() {
+    public static DialogManager getInstance() {
         return sInstance;
     }
 
@@ -37,6 +37,7 @@ public class MyActyManager {
     }
 
     public void setCurrentActivity(Activity activity) {
+        StyledDialog.init(activity);
         sCurrentActivityWeakRef = new WeakReference<Activity>(activity);
     }
 }

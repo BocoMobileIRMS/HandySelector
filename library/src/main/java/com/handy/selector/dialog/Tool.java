@@ -120,7 +120,7 @@ public class Tool {
                 return bean;
             }
         }
-        Activity activity = MyActyManager.getInstance().getCurrentActivity();
+        Activity activity = DialogManager.getInstance().getCurrentActivity();
         if (activity != null) {
             bean.context = activity;
             return bean;
