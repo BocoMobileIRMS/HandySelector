@@ -19,19 +19,18 @@ public class DialogAssigner implements Assignable {
 
     private static DialogAssigner instance;
 
-    private DialogAssigner(){
+    private DialogAssigner() {
 
     }
 
-    public static DialogAssigner getInstance(){
-        if (instance == null){
+    public static DialogAssigner getInstance() {
+        if (instance == null) {
             instance = new DialogAssigner();
         }
         return instance;
     }
 
     /**
-     *
      * @param context
      * @param msg
      * @param isHorizontal 是水平还是圈圈
@@ -66,7 +65,7 @@ public class DialogAssigner implements Assignable {
         ConfigBean bean = new ConfigBean();
         bean.context = activity;
         bean.msg = msg;
-       bean.title = title;
+        bean.title = title;
         bean.listener = listener;
         bean.type = DefaultConfig.TYPE_MD_ALERT;
         bean.btn1Color = DefaultConfig.mdBtnColor;
@@ -118,17 +117,17 @@ public class DialogAssigner implements Assignable {
     public ConfigBean assignMdMultiChoose(Activity context, CharSequence title, CharSequence[] words,
                                           List<Integer> selectedIndexs, MyDialogListener btnListener) {
         boolean[] checkedItems = new boolean[words.length];
-        for(int i=0;i<words.length;i++){
-           checkedItems[i] = false;
-            if(selectedIndexs !=null && selectedIndexs.size()>0){
-                for(int j=0; j< selectedIndexs.size();j++){
-                    if(i == selectedIndexs.get(j)){
+        for (int i = 0; i < words.length; i++) {
+            checkedItems[i] = false;
+            if (selectedIndexs != null && selectedIndexs.size() > 0) {
+                for (int j = 0; j < selectedIndexs.size(); j++) {
+                    if (i == selectedIndexs.get(j)) {
                         checkedItems[i] = true;
                     }
                 }
             }
         }
-        return assignMdMultiChoose(context,title,words,checkedItems,btnListener);
+        return assignMdMultiChoose(context, title, words, checkedItems, btnListener);
     }
 
     @Override
@@ -225,7 +224,7 @@ public class DialogAssigner implements Assignable {
     public ConfigBean assignBottomSheetLv(Context context, CharSequence title, List datas, CharSequence bottomTxt, MyItemDialogListener listener) {
         ConfigBean bean = new ConfigBean();
         bean.context = context;
-       bean.title = title;
+        bean.title = title;
         bean.lvDatas = datas;
         bean.bottomTxt = bottomTxt;
         bean.itemListener = listener;
