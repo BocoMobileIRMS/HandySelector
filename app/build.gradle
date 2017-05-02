@@ -24,6 +24,7 @@ android {
             /* 可以在res.srcDirs中配置多个可移植项目的res目录 */
             res.srcDirs = ['src/main/res/',
                            'src/main/res/child-button',
+                           'src/main/res/child-picker',
                            'src/main/res/child-dialog']
         }
     }
@@ -38,6 +39,8 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
     testCompile 'junit:junit:4.12'
     compile project(':library')
-    compile 'com.jakewharton:butterknife:8.5.1' //ButterKnife
+    compile 'com.jakewharton:butterknife:8.5.1'
+    //ButterKnife
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'com.alibaba:fastjson:1.2.31'
 }
