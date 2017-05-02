@@ -30,16 +30,16 @@
             android:paddingRight="16dp"
             android:text="SystemSwitch" />
 
-        <com.handy.selector.button.SmoothSwitch
+        <com.handy.selector.smoothbutton.SmoothSwitch
             style="@style/SettingsCellSingleCompoundButton"
             android:text="SmoothSwitch" />
 
-        <com.handy.selector.button.SmoothSwitch
+        <com.handy.selector.smoothbutton.SmoothSwitch
             style="@style/SettingsCellSingleCompoundButton"
             android:adjustViewBounds="true"
             android:text="SmoothSwitch ClickMarkOnly" />
 
-        <com.handy.selector.button.SmoothSwitch
+        <com.handy.selector.smoothbutton.SmoothSwitch
             style="@style/SettingsCellSingleCompoundButton"
             android:cropToPadding="true"
             android:text="SmoothSwitch ReverseMarkPosition" />
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal" >
 
-            <com.handy.selector.button.SmoothSwitch
+            <com.handy.selector.smoothbutton.SmoothSwitch
                 android:id="@+id/sample_smoothswitch1"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 android:text=""
                 android:tint="@color/material_lightblue_500" />
 
-            <com.handy.selector.button.SmoothSwitch
+            <com.handy.selector.smoothbutton.SmoothSwitch
                 android:id="@+id/sample_smoothswitch2"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
@@ -78,16 +78,16 @@
             android:paddingRight="16dp"
             android:text="SystemCheckBox" />
 
-        <com.handy.selector.button.SmoothCheckBox
+        <com.handy.selector.smoothbutton.SmoothCheckBox
             style="@style/SettingsCellSingleCompoundButton"
             android:text="SmoothCheckBox" />
 
-        <com.handy.selector.button.SmoothCheckBox
+        <com.handy.selector.smoothbutton.SmoothCheckBox
             style="@style/SettingsCellSingleCompoundButton"
             android:adjustViewBounds="true"
             android:text="SmoothCheckBox ClickMarkOnly" />
 
-        <com.handy.selector.button.SmoothCheckBox
+        <com.handy.selector.smoothbutton.SmoothCheckBox
             style="@style/SettingsCellSingleCompoundButton"
             android:cropToPadding="true"
             android:text="SmoothCheckBox ReverseMarkPosition" />
@@ -142,7 +142,7 @@
                 android:src="@drawable/abc_btn_check_to_on_mtrl_000"
                 android:tint="#ff6d6d6d" />
 
-            <com.handy.selector.button.SmoothCheckBox
+            <com.handy.selector.smoothbutton.SmoothCheckBox
                 android:id="@+id/sample_smoothcheckbox1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
@@ -152,7 +152,7 @@
                 android:text=""
                 android:tint="@color/material_lightblue_500" />
 
-            <com.handy.selector.button.SmoothCheckBox
+            <com.handy.selector.smoothbutton.SmoothCheckBox
                 android:id="@+id/sample_smoothcheckbox2"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
@@ -200,31 +200,31 @@
                 android:text="SystemRadioButton2" />
         </RadioGroup>
 
-        <com.handy.selector.button.SmoothRadioGroup
+        <com.handy.selector.smoothbutton.SmoothRadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checkedButton="@+id/smoothRadioButton1"
             android:orientation="vertical" >
 
-            <com.handy.selector.button.SmoothRadioButton
+            <com.handy.selector.smoothbutton.SmoothRadioButton
                 android:id="@+id/smoothRadioButton1"
                 style="@style/SettingsCellSingleCompoundButton"
                 android:text="SmoothRadioButton1 in RadioGroup" />
 
-            <com.handy.selector.button.SmoothRadioButton
+            <com.handy.selector.smoothbutton.SmoothRadioButton
                 android:id="@+id/smoothRadioButton2"
                 style="@style/SettingsCellSingleCompoundButton"
                 android:checked="false"
                 android:text="SmoothRadioButton2 in RadioGroup" />
-        </com.handy.selector.button.SmoothRadioGroup>
+        </com.handy.selector.smoothbutton.SmoothRadioGroup>
 
-        <com.handy.selector.button.SmoothRadioButton
+        <com.handy.selector.smoothbutton.SmoothRadioButton
             style="@style/SettingsCellSingleCompoundButton"
             android:adjustViewBounds="true"
             android:checked="true"
             android:text="SmoothRadioButton ClickMarkOnly" />
 
-        <com.handy.selector.button.SmoothRadioButton
+        <com.handy.selector.smoothbutton.SmoothRadioButton
             style="@style/SettingsCellSingleCompoundButton"
             android:checked="true"
             android:cropToPadding="true"
@@ -280,7 +280,7 @@
                 android:src="@drawable/abc_btn_radio_to_on_mtrl_000"
                 android:tint="#ff6d6d6d" />
 
-            <com.handy.selector.button.SmoothRadioButton
+            <com.handy.selector.smoothbutton.SmoothRadioButton
                 android:id="@+id/sample_smoothradiobutton1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
@@ -288,7 +288,7 @@
                 android:text=""
                 android:tint="@color/material_lightblue_500" />
 
-            <com.handy.selector.button.SmoothRadioButton
+            <com.handy.selector.smoothbutton.SmoothRadioButton
                 android:id="@+id/sample_smoothradiobutton2"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
@@ -356,13 +356,13 @@
                 android:layout_weight="1"
                 android:text="Test in clickable viewgroup" />
 
-            <com.handy.selector.button.SmoothCheckBox
+            <com.handy.selector.smoothbutton.SmoothCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="" />
         </LinearLayout>
 
-        <com.handy.selector.button.SmoothCheckBox
+        <com.handy.selector.smoothbutton.SmoothCheckBox
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:visibility="gone" />
