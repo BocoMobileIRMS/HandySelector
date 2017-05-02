@@ -20,7 +20,28 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 
-public class SampleActivity extends Activity {
+public class SmoothButtonActivity extends Activity {
+
+	public static boolean saveViewAsBitmapFile(View view, int backgroundColor, String filePath) {
+		Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+		Canvas canvas = new Canvas(bitmap);
+		canvas.drawColor(backgroundColor);
+		view.draw(canvas);
+		File file = new File(filePath);
+		try {
+			FileOutputStream out = new FileOutputStream(file);
+			if (bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)) {
+				out.flush();
+				out.close();
+				return true;
+			}
+		} catch (OutOfMemoryError error) {
+			error.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +57,7 @@ public class SampleActivity extends Activity {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				for(int id : ctrlIds){
-					((SmoothCompoundButton)findViewById(id)).setEnabled(isChecked);
+					findViewById(id).setEnabled(isChecked);
 				}
 			}
 		});
@@ -48,7 +69,7 @@ public class SampleActivity extends Activity {
 				}
 			}
 		});
-        
+
         ((CheckBox)findViewById(R.id.ctrl_checked_withanimation)).setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -58,11 +79,12 @@ public class SampleActivity extends Activity {
 			}
 		});
     }
-    public void onClickAppCompatImageView(View v){
+
+	public void onClickAppCompatImageView(View v){
     	Toast.makeText(getApplicationContext()	, "Oh, I am just a image copied from AppCompatLibrary.", Toast.LENGTH_SHORT).show();
     }
-    
-    public void saveSamplePicture(View v){
+
+	public void saveSamplePicture(View v){
     	//Delay是为了让这个按钮的pressed的状态消失
     	v.postDelayed(new Runnable() {
 			@Override
@@ -77,31 +99,9 @@ public class SampleActivity extends Activity {
 				}
 			}
 		}, 200);
-    	
-    }
-    public static boolean saveViewAsBitmapFile(View view,int backgroundColor, String filePath){
-    	Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
-    	Canvas canvas = new Canvas(bitmap);
-    	canvas.drawColor(backgroundColor);
-    	view.draw(canvas);
-    	File file = new File(filePath);
-		try {
-			FileOutputStream out = new FileOutputStream(file);
-			if (bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)) {
-				out.flush();
-				out.close();
-				return true;
-			}
-		} catch (OutOfMemoryError error) {
-			error.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
-    }
-    
-    
 
+	}
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //getMenuInflater().inflate(R.menu.main, menu);
