@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.handy.selector.app.R;
-import com.handy.selector.button.SmoothCompoundButton;
+import com.handy.selector.smoothbutton.SmoothCompoundButton;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -46,8 +46,8 @@ public class SmoothButtonActivity extends Activity {
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sample);
-        final int[] ctrlIds = new int[]{R.id.sample_smoothswitch1,
+		setContentView(R.layout.activity_button);
+		final int[] ctrlIds = new int[]{R.id.sample_smoothswitch1,
         		R.id.sample_smoothcheckbox1,
         		R.id.sample_smoothcheckbox2,
         		R.id.sample_smoothradiobutton1,
