@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.handy.selector.app.R;
+import com.handy.selector.dialog.DialogManager;
 import com.handy.selector.dialog.StyledDialog;
 import com.handy.selector.dialog.Tool;
 import com.handy.selector.dialog.adapter.SuperRcvAdapter;
@@ -107,7 +108,7 @@ public class DialogActivity extends Activity {
         handler = new Handler();
         activity = this;
         context = getApplication();
-        StyledDialog.init(this);
+        DialogManager.getInstance().setCurrentActivity(this);
     }
 
     @Override
