@@ -47,10 +47,10 @@ import java.util.concurrent.TimeUnit;
  * @see OnItemSelectListener
  */
 public class WheelView extends View {
-    public static final int TEXT_SIZE = 16;//sp
-    public static final int TEXT_COLOR_FOCUS = 0XFF0288CE;
-    public static final int TEXT_COLOR_NORMAL = 0XFFBBBBBB;
-    public static final int DIVIDER_COLOR = 0XFF83CDE6;
+    public static final int TEXT_SIZE = 15;//sp
+    public static final int TEXT_COLOR_FOCUS = 0XFF0091ea;
+    public static final int TEXT_COLOR_NORMAL = 0XFF9e9e9e;
+    public static final int DIVIDER_COLOR = 0XFF0091ea;
     public static final int DIVIDER_ALPHA = 220;
     public static final float DIVIDER_THICK = 2f;//px
     public static final int ITEM_OFF_SET = 3;
@@ -58,7 +58,7 @@ public class WheelView extends View {
     private static final int ACTION_CLICK = 1;//点击
     private static final int ACTION_FLING = 2;//滑翔
     private static final int ACTION_DRAG = 3;//拖拽
-    private static final int VELOCITY_FLING = 5;//修改这个值可以改变滑行速度
+    private static final int VELOCITY_FLING = 8;//修改这个值可以改变滑行速度
     private static final float SCALE_CONTENT = 0.8F;//非中间文字用此控制高度，压扁形成3D错觉
 
     private MessageHandler handler;

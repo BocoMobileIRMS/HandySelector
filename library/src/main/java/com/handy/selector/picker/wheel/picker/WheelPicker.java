@@ -217,5 +217,4 @@ public abstract class WheelPicker extends ConfirmPopup<View> {
         });
         animatorSet.start();
     }
-
 }
