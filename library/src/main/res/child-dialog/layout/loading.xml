@@ -8,7 +8,7 @@
               android:minWidth="130dp"
               android:orientation="vertical">
 
-    <com.hss01248.dialog.view.GifMovieView
+    <com.handy.selector.dialog.view.GifMovieView
         android:id="@+id/iv_loading"
         android:layout_width="30dp"
         android:layout_height="30dp"
