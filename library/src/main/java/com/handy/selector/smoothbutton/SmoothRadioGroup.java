@@ -1,4 +1,4 @@
-package com.handy.selector.button;
+package com.handy.selector.smoothbutton;
 
 import android.content.Context;
 import android.content.res.TypedArray;

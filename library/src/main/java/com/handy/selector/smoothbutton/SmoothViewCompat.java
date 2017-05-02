@@ -1,4 +1,4 @@
-package com.handy.selector.button;
+package com.handy.selector.smoothbutton;
 
 import android.annotation.TargetApi;
 import android.os.Build;
