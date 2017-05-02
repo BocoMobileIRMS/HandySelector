@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.handy.selector.app.button.SmoothButtonActivity;
+import com.handy.selector.app.dialog.DialogActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SmoothButtonActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.Dialog).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DialogActivity.class);
                 startActivity(intent);
             }
         });
