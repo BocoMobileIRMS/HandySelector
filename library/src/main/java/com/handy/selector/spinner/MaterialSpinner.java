@@ -333,9 +333,9 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
      * @param items A list of items
      * @param <T>   The item type
      */
-    public <T> void setItems(@NonNull List<T> items) {
+    public <T> void setItems(@NonNull List<T> items, @NonNull SpinnerItemShowApi<T> spinnerItemShowApi) {
         numberOfItems = items.size();
-        adapter = new MaterialSpinnerAdapter<>(getContext(), items).setTextColor(textColor);
+        adapter = new MaterialSpinnerAdapter<>(getContext(), items, spinnerItemShowApi).setTextColor(textColor);
         setAdapterInternal(adapter);
     }
 
@@ -368,8 +368,8 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
      *
      * @param adapter The list adapter
      */
-    public void setAdapter(@NonNull ListAdapter adapter) {
-        this.adapter = new MaterialSpinnerAdapterWrapper(getContext(), adapter);
+    public void setAdapter(@NonNull ListAdapter adapter, @NonNull SpinnerItemShowApi spinnerItemShowApi) {
+        this.adapter = new MaterialSpinnerAdapterWrapper(getContext(), adapter, spinnerItemShowApi);
         setAdapterInternal(this.adapter);
     }
 
