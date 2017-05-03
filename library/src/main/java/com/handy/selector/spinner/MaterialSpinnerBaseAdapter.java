@@ -20,6 +20,7 @@ package com.handy.selector.spinner;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,11 +34,17 @@ import java.util.List;
 public abstract class MaterialSpinnerBaseAdapter<T> extends BaseAdapter {
 
     private final Context context;
-    private int selectedIndex;
-    private int textColor;
+    private final SpinnerItemShowApi spinnerItemShowApi;
 
-    public MaterialSpinnerBaseAdapter(Context context) {
+    private int textSize;
+    private int textColor;
+    private int textGravity;
+
+    private int selectedIndex;
+
+    public MaterialSpinnerBaseAdapter(@NonNull Context context, @NonNull SpinnerItemShowApi spinnerItemShowApi) {
         this.context = context;
+        this.spinnerItemShowApi = spinnerItemShowApi;
     }
 
     @Override
@@ -47,7 +54,9 @@ public abstract class MaterialSpinnerBaseAdapter<T> extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.ms__list_item, parent, false);
             textView = (TextView) convertView.findViewById(R.id.tv_tinted_spinner);
+            textView.setTextSize(textSize);
             textView.setTextColor(textColor);
+            textView.setGravity(textGravity);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 Configuration config = context.getResources().getConfiguration();
                 if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
@@ -58,7 +67,7 @@ public abstract class MaterialSpinnerBaseAdapter<T> extends BaseAdapter {
         } else {
             textView = ((ViewHolder) convertView.getTag()).textView;
         }
-        textView.setText(getItem(position).toString());
+        textView.setText(spinnerItemShowApi.getItemShow(getItem(position)));
         return convertView;
     }
 
@@ -90,6 +99,16 @@ public abstract class MaterialSpinnerBaseAdapter<T> extends BaseAdapter {
         return this;
     }
 
+    public MaterialSpinnerBaseAdapter<T> setTextGravity(int textGravity) {
+        this.textGravity = textGravity;
+        return this;
+    }
+
+    public MaterialSpinnerBaseAdapter<T> setTextSize(int textSize) {
+        this.textSize = textSize;
+        return this;
+    }
+
     private static class ViewHolder {
 
         private TextView textView;
@@ -97,7 +116,5 @@ public abstract class MaterialSpinnerBaseAdapter<T> extends BaseAdapter {
         private ViewHolder(TextView textView) {
             this.textView = textView;
         }
-
     }
-
 }
