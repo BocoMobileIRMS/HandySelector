@@ -100,6 +100,10 @@ public abstract class MaterialSpinnerBaseAdapter<T> extends BaseAdapter {
 
     public abstract List<T> getItems();
 
+    public SpinnerItemShowApi getSpinnerItemShowApi() {
+        return spinnerItemShowApi;
+    }
+
     public MaterialSpinnerBaseAdapter<T> setTextColor(int textColor) {
         this.textColor = textColor;
         return this;
