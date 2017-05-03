@@ -25,10 +25,8 @@
     <com.handy.selector.spinner.MaterialSpinner
         android:id="@+id/spinner2"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="56dp"
         android:layout_below="@id/spinner"
         android:layout_marginTop="8dp"
-        app:ms_dropdown_height="180dp"
-        app:ms_dropdown_max_height="350dp"/>
-
+        app:ms_dropdown_height="180dp"/>
 </RelativeLayout>
