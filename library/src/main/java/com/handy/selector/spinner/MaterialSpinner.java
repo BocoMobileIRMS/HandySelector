@@ -146,10 +146,9 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
                 nothingSelected = false;
                 Object item = adapter.get(position);
                 adapter.notifyItemSelected(position);
-                setText(item.toString());
+                setText(adapter.getSpinnerItemShowApi().getItemShow(item));
                 collapse();
                 if (onItemSelectedListener != null) {
-                    //noinspection unchecked
                     onItemSelectedListener.onItemSelected(MaterialSpinner.this, position, id, item);
                 }
             }
@@ -257,7 +256,7 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
             Bundle bundle = (Bundle) savedState;
             selectedIndex = bundle.getInt("selected_index");
             if (adapter != null) {
-                setText(adapter.get(selectedIndex).toString());
+                setText(adapter.getSpinnerItemShowApi().getItemShow(adapter.get(selectedIndex)));
                 adapter.notifyItemSelected(selectedIndex);
             }
             if (bundle.getBoolean("is_popup_showing")) {
@@ -302,7 +301,7 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
             if (position >= 0 && position <= adapter.getCount()) {
                 adapter.notifyItemSelected(position);
                 selectedIndex = position;
-                setText(adapter.get(position).toString());
+                setText(adapter.getSpinnerItemShowApi().getItemShow(adapter.get(position)));
             } else {
                 throw new IllegalArgumentException("Position must be lower than adapter count!");
             }
@@ -339,6 +338,17 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
         setAdapterInternal(adapter);
     }
 
+    public void setItems(@NonNull List<String> items) {
+        numberOfItems = items.size();
+        adapter = new MaterialSpinnerAdapter<String>(getContext(), items, new SpinnerItemShowApi<String>() {
+            @Override
+            public String getItemShow(@NonNull String item) {
+                return item;
+            }
+        }).setTextColor(textColor);
+        setAdapterInternal(adapter);
+    }
+
     /**
      * Get the list of items in the adapter
      *
@@ -353,14 +363,23 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
         return adapter.getItems();
     }
 
+    public <T> void setItems(String... items) {
+        setItems(Arrays.asList(items), new SpinnerItemShowApi<String>() {
+            @Override
+            public String getItemShow(@NonNull String item) {
+                return item;
+            }
+        });
+    }
+
     /**
      * Set the dropdown items
      *
      * @param items A list of items
      * @param <T>   The item type
      */
-    public <T> void setItems(@NonNull T... items) {
-        setItems(Arrays.asList(items));
+    public <T> void setItems(@NonNull SpinnerItemShowApi<T> spinnerItemShowApi, @NonNull T... items) {
+        setItems(Arrays.asList(items), spinnerItemShowApi);
     }
 
     /**
@@ -383,7 +402,7 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
         if (selectedIndex >= numberOfItems) {
             selectedIndex = 0;
         }
-        setText(adapter.get(selectedIndex).toString());
+        setText(adapter.getSpinnerItemShowApi().getItemShow(adapter.get(selectedIndex)));
     }
 
     /**
@@ -498,14 +517,12 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
          * @param item     The selected item
          */
         void onItemSelected(MaterialSpinner view, int position, long id, T item);
-
     }
 
     /**
      * Interface definition for a callback to be invoked when the dropdown is dismissed and no item was selected.
      */
     public interface OnNothingSelectedListener {
-
         /**
          * Callback method to be invoked when the {@link PopupWindow} is dismissed and no item was selected.
          *
@@ -513,5 +530,4 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
          */
         void onNothingSelected(MaterialSpinner spinner);
     }
-
 }
