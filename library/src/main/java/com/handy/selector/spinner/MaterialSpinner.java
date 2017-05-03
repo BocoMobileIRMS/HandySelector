@@ -19,7 +19,6 @@ package com.handy.selector.spinner;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -103,18 +102,7 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
             ta.recycle();
         }
 
-        Resources resources = getResources();
-        int left, right, bottom, top;
-        left = right = bottom = top = resources.getDimensionPixelSize(R.dimen.ms__padding_top);
-        if (rtl) {
-            right = resources.getDimensionPixelSize(R.dimen.ms__padding_left);
-        } else {
-            left = resources.getDimensionPixelSize(R.dimen.ms__padding_left);
-        }
-
-        setGravity(Gravity.CENTER_VERTICAL | Gravity.START);
         setClickable(true);
-        setPadding(left, top, right, bottom);
         setBackgroundResource(R.drawable.ms__selector);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && rtl) {
             setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
@@ -133,6 +121,7 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
 
         listView = new ListView(context);
         listView.setId(getId());
+        listView.setPadding(0, 0, arrowDrawable.getIntrinsicWidth(), 0);
         listView.setDivider(null);
         listView.setItemsCanFocus(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
