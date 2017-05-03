@@ -338,7 +338,7 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
         setAdapterInternal(adapter);
     }
 
-    public void setItems(@NonNull List<String> items) {
+    public <T> void setItems(@NonNull List<String> items) {
         numberOfItems = items.size();
         adapter = new MaterialSpinnerAdapter<String>(getContext(), items, new SpinnerItemShowApi<String>() {
             @Override
