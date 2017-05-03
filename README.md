@@ -9,6 +9,7 @@
 选择器：[gzu-liyujiang/AndroidPicker](https://github.com/gzu-liyujiang/AndroidPicker)<br>
 对话框：[hss01248/DialogUtil](https://github.com/hss01248/DialogUtil)<br>
 多选、单选、滑动Switch控件：[Mixiaoxiao/SmoothCompoundButton](https://github.com/Mixiaoxiao/SmoothCompoundButton)
+Spinner控件：[jaredrummler/material-spinner](https://github.com/jaredrummler/material-spinner)
 
 ## 项目引用
 
@@ -40,7 +41,21 @@
     }
 ```
 
+#### Step 4.使用Spinner时，自xml定义属性说明
+属性 | 类型 | 说明
+----|------|----
+ms_arrow_tint | color | 设置箭头颜色
+ms_hide_arrow |	boolean | 设置箭头显影
+ms_background_color | color | 设置Spinner背景颜色
+ms_text_color | color | 设置Spinner文字颜色
+ms_dropdown_max_height | dimension | 设置Spinner最大高度
+ms_dropdown_height | dimension | 设置Spinner高度
+
 ##  更新日志
+***2017年5月2日 v1.0.1***
+
+* 增加Spinner
+
 ***2017年5月2日 v1.0.0***
 
 * 初始化项目提交
