@@ -8,7 +8,7 @@
 此项目整合了三个开源项目：<br>
 选择器：[gzu-liyujiang/AndroidPicker](https://github.com/gzu-liyujiang/AndroidPicker)<br>
 对话框：[hss01248/DialogUtil](https://github.com/hss01248/DialogUtil)<br>
-多选、单选、滑动Switch控件：[Mixiaoxiao/SmoothCompoundButton](https://github.com/Mixiaoxiao/SmoothCompoundButton)
+多选、单选、滑动Switch控件：[Mixiaoxiao/SmoothCompoundButton](https://github.com/Mixiaoxiao/SmoothCompoundButton)<br>
 Spinner控件：[jaredrummler/material-spinner](https://github.com/jaredrummler/material-spinner)
 
 ## 项目引用
