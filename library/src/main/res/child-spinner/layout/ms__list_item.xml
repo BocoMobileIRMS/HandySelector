@@ -4,14 +4,11 @@
     android:id="@+id/tv_tinted_spinner"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="start|center_vertical"
+    android:layout_gravity="center_vertical"
     android:ellipsize="marquee"
     android:gravity="center_vertical"
-    android:minHeight="@dimen/ms__item_height"
-    android:paddingBottom="@dimen/ms__popup_padding_top"
-    android:paddingLeft="@dimen/ms__popup_padding_left"
-    android:paddingRight="@dimen/ms__popup_padding_left"
-    android:paddingStart="@dimen/ms__popup_padding_left"
-    android:paddingTop="@dimen/ms__popup_padding_top"
-    android:singleLine="true"/>
-
+    android:paddingBottom="8dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="8dp"
+    android:textSize="13sp"/>
