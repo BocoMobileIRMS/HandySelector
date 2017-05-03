@@ -18,6 +18,7 @@
 package com.handy.selector.spinner;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.widget.ListAdapter;
 
 import java.util.ArrayList;
@@ -26,10 +27,12 @@ import java.util.List;
 final class MaterialSpinnerAdapterWrapper extends MaterialSpinnerBaseAdapter {
 
     private final ListAdapter listAdapter;
+    private SpinnerItemShowApi spinnerItemShowApi;
 
-    public MaterialSpinnerAdapterWrapper(Context context, ListAdapter toWrap) {
-        super(context);
-        listAdapter = toWrap;
+    public MaterialSpinnerAdapterWrapper(@NonNull Context context, @NonNull ListAdapter toWrap, @NonNull SpinnerItemShowApi spinnerItemShowApi) {
+        super(context, spinnerItemShowApi);
+        this.listAdapter = toWrap;
+        this.spinnerItemShowApi = spinnerItemShowApi;
     }
 
     @Override
@@ -59,5 +62,4 @@ final class MaterialSpinnerAdapterWrapper extends MaterialSpinnerBaseAdapter {
         }
         return items;
     }
-
 }
