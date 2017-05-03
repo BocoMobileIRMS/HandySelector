@@ -18,16 +18,19 @@
 package com.handy.selector.spinner;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import java.util.List;
 
 public class MaterialSpinnerAdapter<T> extends MaterialSpinnerBaseAdapter {
 
     private final List<T> items;
+    private SpinnerItemShowApi spinnerItemShowApi;
 
-    public MaterialSpinnerAdapter(Context context, List<T> items) {
-        super(context);
+    public MaterialSpinnerAdapter(@NonNull Context context, @NonNull List<T> items, @NonNull SpinnerItemShowApi spinnerItemShowApi) {
+        super(context, spinnerItemShowApi);
         this.items = items;
+        this.spinnerItemShowApi = spinnerItemShowApi;
     }
 
     @Override
@@ -53,5 +56,4 @@ public class MaterialSpinnerAdapter<T> extends MaterialSpinnerBaseAdapter {
     public List<T> getItems() {
         return items;
     }
-
 }
