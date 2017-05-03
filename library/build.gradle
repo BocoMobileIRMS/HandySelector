@@ -25,7 +25,8 @@ android {
             /* 可以在res.srcDirs中配置多个可移植项目的res目录 */
             res.srcDirs = ['src/main/res/',
                            'src/main/res/child-dialog',
-                           'src/main/res/child-picker']
+                           'src/main/res/child-picker',
+                           'src/main/res/child-spinner']
         }
     }
 }
