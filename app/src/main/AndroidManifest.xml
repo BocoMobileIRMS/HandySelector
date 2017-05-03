@@ -21,6 +21,7 @@
         <activity android:name=".dialog.DialogActivity"/>
         <activity android:name=".picker.PickerActivity"/>
         <activity android:name=".picker.NestActivity"/>
+        <activity android:name=".spinner.SpinnerActivity"/>
     </application>
 
 </manifest>
