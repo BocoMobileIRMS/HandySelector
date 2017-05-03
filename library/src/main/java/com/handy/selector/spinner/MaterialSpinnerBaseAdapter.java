@@ -36,9 +36,9 @@ public abstract class MaterialSpinnerBaseAdapter<T> extends BaseAdapter {
     private final Context context;
     private final SpinnerItemShowApi spinnerItemShowApi;
 
-    private int textSize;
-    private int textColor;
-    private int textGravity;
+    private int textSize = -1;
+    private int textColor = -1;
+    private int textGravity = -1;
 
     private int selectedIndex;
 
@@ -54,9 +54,15 @@ public abstract class MaterialSpinnerBaseAdapter<T> extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.ms__list_item, parent, false);
             textView = (TextView) convertView.findViewById(R.id.tv_tinted_spinner);
-            textView.setTextSize(textSize);
-            textView.setTextColor(textColor);
-            textView.setGravity(textGravity);
+            if (textSize != -1) {
+                textView.setTextSize(textSize);
+            }
+            if (textSize != -1) {
+                textView.setTextColor(textColor);
+            }
+            if (textSize != -1) {
+                textView.setGravity(textGravity);
+            }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 Configuration config = context.getResources().getConfiguration();
                 if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
