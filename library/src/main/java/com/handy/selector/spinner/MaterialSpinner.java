@@ -123,6 +123,7 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
         listView.setId(getId());
         listView.setPadding(0, 0, arrowDrawable.getIntrinsicWidth(), 0);
         listView.setDivider(null);
+        listView.setVerticalScrollBarEnabled(false);
         listView.setItemsCanFocus(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
