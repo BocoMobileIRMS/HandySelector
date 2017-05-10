@@ -103,7 +103,9 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
         }
 
         setClickable(true);
-        setBackgroundResource(R.drawable.ms__selector);
+        if (getBackground() == null) {
+            setBackgroundResource(R.drawable.ms__selector);
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && rtl) {
             setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
             setTextDirection(View.TEXT_DIRECTION_RTL);
