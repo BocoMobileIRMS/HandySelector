@@ -2,7 +2,7 @@
 ![](HandyBase.png)
 
 ## 最新版本
-    compile 'com.github.liujie045:HandySelector:1.0.0'
+    compile 'com.github.liujie045:HandySelector:1.0.2'
 
 ## 项目说明
 此项目整合了三个开源项目：<br>
@@ -52,6 +52,10 @@ ms_dropdown_max_height | dimension | 设置Spinner最大高度
 ms_dropdown_height | dimension | 设置Spinner高度
 
 ##  更新日志
+***2017年5月10日 v1.0.2***
+
+* 增加Spinner xml中配置background的能力
+
 ***2017年5月2日 v1.0.1***
 
 * 增加Spinner
