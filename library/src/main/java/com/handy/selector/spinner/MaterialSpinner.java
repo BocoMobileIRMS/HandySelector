@@ -322,11 +322,17 @@ public class MaterialSpinner extends android.support.v7.widget.AppCompatTextView
      * Clean the Spinner Data
      */
     public void setNull() {
-        adapter = null;
+        if (adapter != null) {
+            adapter.Reset2Defaults();
+            adapter = null;
+        }
+        if (listView != null) {
+            listView.setAdapter(null);
+        }
+        setText(null);
         selectedIndex = 0;
         numberOfItems = 0;
-        setText(null);
-        listView.setAdapter(null);
+        nothingSelected = false;
     }
 
     /**
