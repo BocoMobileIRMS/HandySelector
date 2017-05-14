@@ -70,7 +70,7 @@ public class SpinnerActivity extends AppCompatActivity {
             add(new Student("4", "D"));
             add(new Student("5", "E"));
         }};
-        MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.spinner);
+        final MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.spinner);
 
 //        简单设置
 //        spinner.setItems(students, new SpinnerItemShowApi<Student>() {
@@ -97,6 +97,7 @@ public class SpinnerActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, Student item) {
                 Snackbar.make(view, "Clicked " + item.phone, Snackbar.LENGTH_LONG).show();
+                spinner.setNull();
             }
         });
 
@@ -116,6 +117,26 @@ public class SpinnerActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
                 Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
+
+                MaterialSpinnerAdapter adapter = new MaterialSpinnerAdapter<>(SpinnerActivity.this, students, new SpinnerItemShowApi<Student>() {
+                    @Override
+                    public String getItemShow(@NonNull Student item) {
+                        return item.name;
+                    }
+                });
+                adapter.setTextColor(getResources().getColor(R.color.ios_btntext_blue));
+                adapter.setTextSize(17);
+                adapter.setTextGravity(Gravity.CENTER);
+                spinner.setAdapter(adapter);
+
+                spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<Student>() {
+
+                    @Override
+                    public void onItemSelected(MaterialSpinner view, int position, long id, Student item) {
+                        Snackbar.make(view, "Clicked " + item.phone, Snackbar.LENGTH_LONG).show();
+                        spinner.setNull();
+                    }
+                });
             }
         });
     }
