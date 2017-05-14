@@ -42,7 +42,7 @@ public abstract class MaterialSpinnerBaseAdapter<T> extends BaseAdapter {
 
     private int selectedIndex;
 
-    public MaterialSpinnerBaseAdapter(@NonNull Context context, @NonNull SpinnerItemShowApi spinnerItemShowApi) {
+    public MaterialSpinnerBaseAdapter(@NonNull Context context, @NonNull SpinnerItemShowApi<T> spinnerItemShowApi) {
         this.context = context;
         this.spinnerItemShowApi = spinnerItemShowApi;
     }

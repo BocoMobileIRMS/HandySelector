@@ -27,7 +27,7 @@ public class MaterialSpinnerAdapter<T> extends MaterialSpinnerBaseAdapter {
     private final List<T> items;
     private SpinnerItemShowApi spinnerItemShowApi;
 
-    public MaterialSpinnerAdapter(@NonNull Context context, @NonNull List<T> items, @NonNull SpinnerItemShowApi spinnerItemShowApi) {
+    public MaterialSpinnerAdapter(@NonNull Context context, @NonNull List<T> items, @NonNull SpinnerItemShowApi<T> spinnerItemShowApi) {
         super(context, spinnerItemShowApi);
         this.items = items;
         this.spinnerItemShowApi = spinnerItemShowApi;
