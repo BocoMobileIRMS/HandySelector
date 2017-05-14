@@ -119,6 +119,10 @@ public abstract class MaterialSpinnerBaseAdapter<T> extends BaseAdapter {
         return this;
     }
 
+    public void Reset2Defaults() {
+        selectedIndex = 0;
+    }
+
     private static class ViewHolder {
 
         private TextView textView;
