@@ -46,7 +46,8 @@ public abstract class SmoothCompoundButton extends android.support.v7.widget.App
             android.R.attr.checked,// 16843014
             android.R.attr.adjustViewBounds,// 16843038 借来的attr，用于设置mClickMarkOnly
             android.R.attr.tint, // 16843041 借来的attr，用于设置mark的颜色
-            android.R.attr.cropToPadding // 16843043 借来的attr，用于设置mark的左右位置是否反转
+            android.R.attr.cropToPadding, // 16843043 借来的attr，用于设置mark的左右位置是否反转
+            android.R.attr.scrollbarSize // 16843043 借来的attr，用于设置文字和按钮的距离
 
             // android.R.attr.text// 16843087:6
 
@@ -75,6 +76,10 @@ public abstract class SmoothCompoundButton extends android.support.v7.widget.App
      **/
     private boolean mReverseMarkPosition;
     private boolean mIsAttachedToWindow = false;
+    /**
+     * 文字与按钮的距离
+     */
+    private int mScrollbarSize;
 
     public SmoothCompoundButton(Context context) {
         this(context, null);
@@ -124,6 +129,7 @@ public abstract class SmoothCompoundButton extends android.support.v7.widget.App
                 }
             }
             mReverseMarkPosition = a.getBoolean(5, false);
+            mScrollbarSize = a.getInt(6, 0);
             a.recycle();
         }
         mMarkDrawer = makeSmoothMarkDrawer(context, colorOn, colorOff);
