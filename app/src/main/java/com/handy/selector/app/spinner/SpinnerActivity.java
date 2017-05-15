@@ -81,7 +81,7 @@ public class SpinnerActivity extends AppCompatActivity {
 //        });
 
 //        复杂设置
-        MaterialSpinnerAdapter adapter = new MaterialSpinnerAdapter<>(SpinnerActivity.this, students, new SpinnerItemShowApi<Student>() {
+        final MaterialSpinnerAdapter adapter = new MaterialSpinnerAdapter<>(SpinnerActivity.this, students, new SpinnerItemShowApi<Student>() {
             @Override
             public String getItemShow(@NonNull Student item) {
                 return item.name;
@@ -118,25 +118,7 @@ public class SpinnerActivity extends AppCompatActivity {
             public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
                 Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
 
-                MaterialSpinnerAdapter adapter = new MaterialSpinnerAdapter<>(SpinnerActivity.this, students, new SpinnerItemShowApi<Student>() {
-                    @Override
-                    public String getItemShow(@NonNull Student item) {
-                        return item.name;
-                    }
-                });
-                adapter.setTextColor(getResources().getColor(R.color.ios_btntext_blue));
-                adapter.setTextSize(17);
-                adapter.setTextGravity(Gravity.CENTER);
                 spinner.setAdapter(adapter);
-
-                spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<Student>() {
-
-                    @Override
-                    public void onItemSelected(MaterialSpinner view, int position, long id, Student item) {
-                        Snackbar.make(view, "Clicked " + item.phone, Snackbar.LENGTH_LONG).show();
-                        spinner.setNull();
-                    }
-                });
             }
         });
     }
