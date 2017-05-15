@@ -51,7 +51,7 @@ public class SmoothMarkDrawerSwitch extends SmoothMarkDrawer {
         mTrackRectF = new RectF();
         mThumbRectF = new RectF();
         this.mColorOn = convertColorAlpha(1f, colorOn);
-        this.mColorOff = 0xffececec;//convertColorAlpha(1f, colorOff);
+        this.mColorOff = colorOff == 0xff9e9e9e ? 0xffececec : convertColorAlpha(1f, colorOff);//convertColorAlpha(1f, colorOff);
         this.mTrackColorOn = convertColorAlpha(0.3f, mColorOn);
         this.mTrackColorOff = convertColorAlpha(0.3f, 0xff141414);
 
