@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HandySmoothButton">
+        <attr name="PaddingTextLeft" format="dimension"/><!--文字左边距-->
+        <attr name="PaddingTextRight" format="dimension"/><!--文字右边距-->
+        <attr name="OrderTextLeft" format="boolean"/><!--文字排版-->
+        <attr name="DismissShadow" format="boolean"/><!--是否显示阴影背景-->
+        <attr name="OnlyClickButton" format="boolean"/><!--是否显示阴影背景-->
+        <attr name="MarkColor" format="color"/><!--是否显示阴影背景-->
+    </declare-styleable>
+
+    <declare-styleable name="HandySmoothButtonTheme">
+        <attr name="SmoothButtonStyle" format="reference"/>
+    </declare-styleable>
+</resources>
