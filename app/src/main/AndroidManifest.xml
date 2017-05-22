@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.handy.selector.app">
+          package="com.handy.selector.app">\
+
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:allowBackup="true"
@@ -22,6 +24,10 @@
         <activity android:name=".picker.PickerActivity"/>
         <activity android:name=".picker.NestActivity"/>
         <activity android:name=".spinner.SpinnerActivity"/>
+        <activity
+            android:name=".materialdesign.demo.MaterialDesignActivity"
+            android:theme="@style/Theme.AppTheme1"
+            android:windowSoftInputMode="adjustPan"/>
     </application>
 
 </manifest>
