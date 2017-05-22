@@ -52,7 +52,7 @@ ms_dropdown_max_height | dimension | 设置Spinner最大高度
 ms_dropdown_height | dimension | 设置Spinner高度
 
 ##  更新日志
-***2017年5月15日 v1.1.0***
+***2017年5月22日 v1.1.0***
 
 * 新增[Material Design](https://github.com/rey5137/Material/)控件库
 * 移除SmoothButton
