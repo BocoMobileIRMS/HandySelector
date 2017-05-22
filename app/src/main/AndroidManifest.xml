@@ -24,10 +24,7 @@
         <activity android:name=".picker.PickerActivity"/>
         <activity android:name=".picker.NestActivity"/>
         <activity android:name=".spinner.SpinnerActivity"/>
-        <activity
-            android:name=".materialdesign.demo.MaterialDesignActivity"
-            android:theme="@style/Theme.AppTheme1"
-            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".materialdesign.demo.MaterialDesignActivity"/>
     </application>
 
 </manifest>
