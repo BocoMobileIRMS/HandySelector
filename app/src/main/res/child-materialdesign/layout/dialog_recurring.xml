@@ -78,7 +78,7 @@
 
             </LinearLayout>
 
-            <com.handy.selector.app.materialdesign.app.WeekView
+            <com.handy.selector.app.material.app.WeekView
                 android:id="@+id/rd_wv_week"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

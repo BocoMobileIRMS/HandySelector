@@ -1,4 +1,4 @@
-package com.handy.selector.app.materialdesign.demo;
+package com.handy.selector.app.material.demo;
 
 import android.annotation.TargetApi;
 import android.graphics.drawable.Drawable;

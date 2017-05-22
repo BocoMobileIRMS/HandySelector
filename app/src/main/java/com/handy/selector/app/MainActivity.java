@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.handy.selector.app.dialog.DialogActivity;
-import com.handy.selector.app.materialdesign.demo.MaterialDesignActivity;
+import com.handy.selector.app.material.demo.MaterialDesignActivity;
 import com.handy.selector.app.picker.PickerActivity;
 import com.handy.selector.app.spinner.SpinnerActivity;
 

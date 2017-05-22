@@ -1,4 +1,4 @@
-package com.handy.selector.app.materialdesign.demo;
+package com.handy.selector.app.material.demo;
 
 import android.app.Application;
 import android.content.Context;

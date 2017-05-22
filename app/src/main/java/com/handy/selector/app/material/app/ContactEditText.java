@@ -1,4 +1,4 @@
-package com.handy.selector.app.materialdesign.app;
+package com.handy.selector.app.material.app;
 
 import android.content.Context;
 import android.content.res.TypedArray;

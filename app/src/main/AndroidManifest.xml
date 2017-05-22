@@ -24,7 +24,7 @@
         <activity android:name=".picker.PickerActivity"/>
         <activity android:name=".picker.NestActivity"/>
         <activity android:name=".spinner.SpinnerActivity"/>
-        <activity android:name=".materialdesign.demo.MaterialDesignActivity"/>
+        <activity android:name=".material.demo.MaterialDesignActivity"/>
     </application>
 
 </manifest>

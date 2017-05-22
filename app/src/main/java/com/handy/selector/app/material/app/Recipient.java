@@ -1,4 +1,4 @@
-package com.handy.selector.app.materialdesign.app;
+package com.handy.selector.app.material.app;
 
 import android.os.Parcel;
 import android.os.Parcelable;
