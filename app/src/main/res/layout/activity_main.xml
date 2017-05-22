@@ -29,4 +29,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Spinner"/>
+
+    <Button
+        android:id="@+id/MaterialDesign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Material Design"/>
 </LinearLayout>

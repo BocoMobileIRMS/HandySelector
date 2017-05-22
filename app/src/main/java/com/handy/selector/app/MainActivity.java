@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.handy.selector.app.button.SmoothButtonActivity;
 import com.handy.selector.app.dialog.DialogActivity;
+import com.handy.selector.app.materialdesign.demo.MaterialDesignActivity;
 import com.handy.selector.app.picker.PickerActivity;
 import com.handy.selector.app.spinner.SpinnerActivity;
 
@@ -41,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SpinnerActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.MaterialDesign).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MaterialDesignActivity.class);
                 startActivity(intent);
             }
         });
