@@ -9,7 +9,6 @@
 Material Design：[rey5137/material](https://github.com/rey5137/Material/)<br>
 选择器：[gzu-liyujiang/AndroidPicker](https://github.com/gzu-liyujiang/AndroidPicker)<br>
 对话框：[hss01248/DialogUtil](https://github.com/hss01248/DialogUtil)<br>
-多选、单选、滑动Switch控件：[Mixiaoxiao/SmoothCompoundButton](https://github.com/Mixiaoxiao/SmoothCompoundButton)<br>
 Spinner控件：[jaredrummler/material-spinner](https://github.com/jaredrummler/material-spinner)
 
 ## 项目引用
@@ -56,6 +55,7 @@ ms_dropdown_height | dimension | 设置Spinner高度
 ***2017年5月15日 v1.1.0***
 
 * 新增[Material Design](https://github.com/rey5137/Material/)控件库
+* 移除SmoothButton
 
 ***2017年5月15日 v1.0.4***
 
