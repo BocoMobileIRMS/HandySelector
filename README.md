@@ -5,7 +5,8 @@
     compile 'com.github.liujie045:HandySelector:1.0.4'
 
 ## 项目说明
-此项目整合了三个开源项目：<br>
+此项目整合了五个开源项目：<br>
+Material Design：[rey5137/material](https://github.com/rey5137/Material/)<br>
 选择器：[gzu-liyujiang/AndroidPicker](https://github.com/gzu-liyujiang/AndroidPicker)<br>
 对话框：[hss01248/DialogUtil](https://github.com/hss01248/DialogUtil)<br>
 多选、单选、滑动Switch控件：[Mixiaoxiao/SmoothCompoundButton](https://github.com/Mixiaoxiao/SmoothCompoundButton)<br>
@@ -52,6 +53,10 @@ ms_dropdown_max_height | dimension | 设置Spinner最大高度
 ms_dropdown_height | dimension | 设置Spinner高度
 
 ##  更新日志
+***2017年5月15日 v1.1.0***
+
+* 新增[Material Design](https://github.com/rey5137/Material/)控件库
+
 ***2017年5月15日 v1.0.4***
 
 * 更新Spinner setNull方法
