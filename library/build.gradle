@@ -26,7 +26,8 @@ android {
             res.srcDirs = ['src/main/res/',
                            'src/main/res/child-dialog',
                            'src/main/res/child-picker',
-                           'src/main/res/child-spinner']
+                           'src/main/res/child-spinner',
+                           'src/main/res/child-materialdesign']
         }
     }
 }
