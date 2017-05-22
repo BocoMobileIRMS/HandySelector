@@ -20,7 +20,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".button.SmoothButtonActivity"/>
         <activity android:name=".dialog.DialogActivity"/>
         <activity android:name=".picker.PickerActivity"/>
         <activity android:name=".picker.NestActivity"/>
