@@ -5,7 +5,7 @@
     compile 'com.github.liujie045:HandySelector:1.0.4'
 
 ## 项目说明
-此项目整合了五个开源项目：<br>
+此项目整合了四个开源项目：<br>
 Material Design：[rey5137/material](https://github.com/rey5137/Material/)<br>
 选择器：[gzu-liyujiang/AndroidPicker](https://github.com/gzu-liyujiang/AndroidPicker)<br>
 对话框：[hss01248/DialogUtil](https://github.com/hss01248/DialogUtil)<br>
