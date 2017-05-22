@@ -13,7 +13,7 @@
         android:orientation="vertical"
         android:padding="8dp">
 
-        <com.handy.selector.materialdesign.widget.Spinner
+        <com.handy.selector.material.widget.Spinner
             android:id="@+id/spinner_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
             app:spn_label="Spinner with arrow"
             app:v_styleId="@array/spinner"/>
 
-        <com.handy.selector.materialdesign.widget.Spinner
+        <com.handy.selector.material.widget.Spinner
             android:id="@+id/spinner_no_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -10,17 +10,17 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.app.BottomSheetDialog;
-import com.handy.selector.materialdesign.app.DatePickerDialog;
-import com.handy.selector.materialdesign.app.Dialog;
-import com.handy.selector.materialdesign.app.DialogFragment;
-import com.handy.selector.materialdesign.app.SimpleDialog;
-import com.handy.selector.materialdesign.app.ThemeManager;
-import com.handy.selector.materialdesign.app.TimePickerDialog;
-import com.handy.selector.materialdesign.drawable.ThemeDrawable;
-import com.handy.selector.materialdesign.util.ViewUtil;
-import com.handy.selector.materialdesign.widget.Button;
-import com.handy.selector.materialdesign.widget.EditText;
+import com.handy.selector.material.app.BottomSheetDialog;
+import com.handy.selector.material.app.DatePickerDialog;
+import com.handy.selector.material.app.Dialog;
+import com.handy.selector.material.app.DialogFragment;
+import com.handy.selector.material.app.SimpleDialog;
+import com.handy.selector.material.app.ThemeManager;
+import com.handy.selector.material.app.TimePickerDialog;
+import com.handy.selector.material.drawable.ThemeDrawable;
+import com.handy.selector.material.util.ViewUtil;
+import com.handy.selector.material.widget.Button;
+import com.handy.selector.material.widget.EditText;
 
 import java.text.SimpleDateFormat;
 

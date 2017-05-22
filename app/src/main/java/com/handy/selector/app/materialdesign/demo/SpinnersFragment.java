@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.widget.Spinner;
+import com.handy.selector.material.widget.Spinner;
 
 public class SpinnersFragment extends Fragment {
 

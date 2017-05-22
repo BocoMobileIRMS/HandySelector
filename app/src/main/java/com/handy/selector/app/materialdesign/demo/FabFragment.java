@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.widget.FloatingActionButton;
+import com.handy.selector.material.widget.FloatingActionButton;
 
 public class FabFragment extends Fragment {
 

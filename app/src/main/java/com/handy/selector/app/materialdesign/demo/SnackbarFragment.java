@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.widget.Button;
-import com.handy.selector.materialdesign.widget.SnackBar;
+import com.handy.selector.material.widget.Button;
+import com.handy.selector.material.widget.SnackBar;
 
 public class SnackbarFragment extends Fragment {
 

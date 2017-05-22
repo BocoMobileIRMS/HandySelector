@@ -5,8 +5,8 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.handy.selector.materialdesign.widget.Slider;
-import com.handy.selector.materialdesign.widget.Switch;
+import com.handy.selector.material.widget.Slider;
+import com.handy.selector.material.widget.Switch;
 
 /**
  * Created by Rey on 3/18/2015.

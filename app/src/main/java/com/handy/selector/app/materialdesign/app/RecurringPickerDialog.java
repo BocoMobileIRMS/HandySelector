@@ -31,15 +31,15 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.app.DatePickerDialog;
-import com.handy.selector.materialdesign.app.Dialog;
-import com.handy.selector.materialdesign.util.ThemeUtil;
-import com.handy.selector.materialdesign.util.ViewUtil;
-import com.handy.selector.materialdesign.widget.CompoundButton;
-import com.handy.selector.materialdesign.widget.EditText;
-import com.handy.selector.materialdesign.widget.RadioButton;
-import com.handy.selector.materialdesign.widget.Spinner;
-import com.handy.selector.materialdesign.widget.TextView;
+import com.handy.selector.material.app.DatePickerDialog;
+import com.handy.selector.material.app.Dialog;
+import com.handy.selector.material.util.ThemeUtil;
+import com.handy.selector.material.util.ViewUtil;
+import com.handy.selector.material.widget.CompoundButton;
+import com.handy.selector.material.widget.EditText;
+import com.handy.selector.material.widget.RadioButton;
+import com.handy.selector.material.widget.Spinner;
+import com.handy.selector.material.widget.TextView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

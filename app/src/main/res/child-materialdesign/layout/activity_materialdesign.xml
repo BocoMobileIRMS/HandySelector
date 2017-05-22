@@ -22,7 +22,7 @@
                 android:minHeight="?attr/actionBarSize"
                 app:theme="@style/AppBar"/>
 
-            <com.handy.selector.materialdesign.widget.TabIndicatorView
+            <com.handy.selector.material.widget.TabIndicatorView
                 android:id="@+id/main_tiv"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -37,7 +37,7 @@
 
         </LinearLayout>
 
-        <com.handy.selector.materialdesign.widget.SnackBar
+        <com.handy.selector.material.widget.SnackBar
             android:id="@+id/main_sn"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -53,7 +53,7 @@
         android:layout_gravity="start"
         android:paddingTop="?attr/actionBarSize">
 
-        <com.handy.selector.materialdesign.widget.ListView
+        <com.handy.selector.material.widget.ListView
             android:id="@+id/main_lv_drawer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

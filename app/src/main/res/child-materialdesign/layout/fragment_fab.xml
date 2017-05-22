@@ -13,26 +13,26 @@
         android:orientation="vertical"
         android:padding="8dp">
 
-        <com.handy.selector.materialdesign.widget.TextView
+        <com.handy.selector.material.widget.TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Image"
             app:v_styleId="@array/text_title"/>
 
-        <com.handy.selector.materialdesign.widget.FloatingActionButton
+        <com.handy.selector.material.widget.FloatingActionButton
             android:id="@+id/fab_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_iconSrc="@drawable/ic_done_white_24dp"
             app:v_styleId="@array/fab_icon"/>
 
-        <com.handy.selector.materialdesign.widget.TextView
+        <com.handy.selector.material.widget.TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Line Morphing"
             app:v_styleId="@array/text_title"/>
 
-        <com.handy.selector.materialdesign.widget.FloatingActionButton
+        <com.handy.selector.material.widget.FloatingActionButton
             android:id="@+id/fab_line"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

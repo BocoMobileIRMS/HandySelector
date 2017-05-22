@@ -37,12 +37,12 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.style.ContactChipSpan;
-import com.handy.selector.materialdesign.util.ThemeUtil;
-import com.handy.selector.materialdesign.util.TypefaceUtil;
-import com.handy.selector.materialdesign.widget.EditText;
-import com.handy.selector.materialdesign.widget.ListPopupWindow;
-import com.handy.selector.materialdesign.widget.ListView;
+import com.handy.selector.material.style.ContactChipSpan;
+import com.handy.selector.material.util.ThemeUtil;
+import com.handy.selector.material.util.TypefaceUtil;
+import com.handy.selector.material.widget.EditText;
+import com.handy.selector.material.widget.ListPopupWindow;
+import com.handy.selector.material.widget.ListView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 

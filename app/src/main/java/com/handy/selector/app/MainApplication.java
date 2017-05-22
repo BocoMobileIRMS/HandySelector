@@ -3,7 +3,7 @@ package com.handy.selector.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.handy.selector.materialdesign.app.ThemeManager;
+import com.handy.selector.material.app.ThemeManager;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 

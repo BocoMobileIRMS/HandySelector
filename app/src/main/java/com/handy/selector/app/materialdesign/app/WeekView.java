@@ -14,8 +14,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.util.ThemeUtil;
-import com.handy.selector.materialdesign.widget.CircleCheckedTextView;
+import com.handy.selector.material.util.ThemeUtil;
+import com.handy.selector.material.widget.CircleCheckedTextView;
 
 import java.util.Calendar;
 

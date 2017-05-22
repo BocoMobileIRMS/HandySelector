@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.handy.selector.app.R;
 import com.handy.selector.app.materialdesign.app.ContactEditText;
-import com.handy.selector.materialdesign.widget.EditText;
+import com.handy.selector.material.widget.EditText;
 
 public class TextfieldFragment extends Fragment {
 

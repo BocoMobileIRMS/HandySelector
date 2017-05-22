@@ -20,13 +20,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.app.ThemeManager;
-import com.handy.selector.materialdesign.app.ToolbarManager;
-import com.handy.selector.materialdesign.drawable.ThemeDrawable;
-import com.handy.selector.materialdesign.util.ThemeUtil;
-import com.handy.selector.materialdesign.util.ViewUtil;
-import com.handy.selector.materialdesign.widget.SnackBar;
-import com.handy.selector.materialdesign.widget.TabIndicatorView;
+import com.handy.selector.material.app.ThemeManager;
+import com.handy.selector.material.app.ToolbarManager;
+import com.handy.selector.material.drawable.ThemeDrawable;
+import com.handy.selector.material.util.ThemeUtil;
+import com.handy.selector.material.util.ViewUtil;
+import com.handy.selector.material.widget.SnackBar;
+import com.handy.selector.material.widget.TabIndicatorView;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

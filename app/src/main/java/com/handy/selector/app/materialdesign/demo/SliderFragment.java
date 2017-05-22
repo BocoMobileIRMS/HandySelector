@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.widget.Slider;
+import com.handy.selector.material.widget.Slider;
 
 public class SliderFragment extends Fragment {
 

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.widget.RadioButton;
+import com.handy.selector.material.widget.RadioButton;
 
 public class SwitchesFragment extends Fragment {
 

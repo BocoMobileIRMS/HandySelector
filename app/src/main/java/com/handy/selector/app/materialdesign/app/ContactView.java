@@ -27,11 +27,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.handy.selector.app.R;
-import com.handy.selector.materialdesign.drawable.BlankDrawable;
-import com.handy.selector.materialdesign.util.ThemeUtil;
-import com.handy.selector.materialdesign.util.ViewUtil;
-import com.handy.selector.materialdesign.widget.ImageButton;
-import com.handy.selector.materialdesign.widget.RippleManager;
+import com.handy.selector.material.drawable.BlankDrawable;
+import com.handy.selector.material.util.ThemeUtil;
+import com.handy.selector.material.util.ViewUtil;
+import com.handy.selector.material.widget.ImageButton;
+import com.handy.selector.material.widget.RippleManager;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
