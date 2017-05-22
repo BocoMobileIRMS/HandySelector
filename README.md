@@ -2,7 +2,7 @@
 ![](HandyBase.png)
 
 ## 最新版本
-    compile 'com.github.liujie045:HandySelector:1.0.4'
+    compile 'com.github.liujie045:HandySelector:1.1.0'
 
 ## 项目说明
 此项目整合了四个开源项目：<br>
